@@ -1,0 +1,15 @@
+{
+  "name": "ime-website-redesign",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "live-server --port=5500",
+    "preview": "live-server --port=5500",
+    "images:optimize": "node tools/image-opt.js",
+    "test": "echo \"No tests configured\""
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sharp": "^0.34.5"
+  }
+}

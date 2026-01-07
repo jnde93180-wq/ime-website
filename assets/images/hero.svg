@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480" role="img" aria-labelledby="heroTitle">
+  <title id="heroTitle">Students collaborating at IME School</title>
+  <rect width="1200" height="480" fill="#0b57a4"/>
+  <g transform="translate(80,80)">
+    <rect x="0" y="0" width="200" height="120" rx="8" fill="#fff" opacity="0.08"/>
+    <rect x="240" y="0" width="200" height="120" rx="8" fill="#fff" opacity="0.06"/>
+  </g>
+  <text x="60" y="260" font-family="Arial" font-size="42" fill="#fff">Inspiring Minds &amp; Excellence</text>
+</svg>

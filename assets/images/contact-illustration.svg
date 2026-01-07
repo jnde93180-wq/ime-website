@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" role="img" aria-labelledby="contactTitle">
+  <title id="contactTitle">Contact illustration</title>
+  <rect width="400" height="200" rx="12" fill="#ffffff"/>
+  <circle cx="60" cy="60" r="28" fill="#0b57a4"/>
+  <rect x="110" y="40" width="230" height="18" rx="6" fill="#e5e7eb"/>
+  <rect x="110" y="70" width="180" height="14" rx="6" fill="#f3f4f6"/>
+</svg>
