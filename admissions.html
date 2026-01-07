@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Admissions — IME School</title>
-  <meta name="description" content="Admissions at IME School — how to apply, tuition, and open days.">
+  <meta name="description" content="Admissions at IME School — programs, application process, and admission requirements.">
   <meta name="theme-color" content="#0b57a4">
   <link rel="icon" href="assets/images/logo-ime-p.png" type="image/png">
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -20,17 +20,27 @@
         <a href="index.html" class="logo" aria-label="IME School">IME</a>
         <div>
           <div style="font-weight:700">IME School</div>
-          <div style="font-size:0.85rem;opacity:0.9">Inspiring Minds &amp; Excellence</div>
+          <div style="font-size:0.85rem;opacity:0.9" data-lang="en">Excellence in Education</div>
+          <div style="font-size:0.85rem;opacity:0.9;display:none" data-lang="fr">Excellence en Éducation</div>
         </div>
       </div>
       <nav aria-label="Main navigation">
+        <div class="lang-switcher">
+          <button class="lang-btn lang-btn--active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
         <button id="nav-toggle" class="hamburger" aria-expanded="false" aria-controls="nav">☰</button>
         <div id="nav" class="nav" role="menu">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="admissions.html">Admissions</a>
-          <a href="news.html">News</a>
-          <a href="contact.html">Contact</a>
+          <a href="index.html" data-lang="en">Home</a>
+          <a href="index.html" data-lang="fr" style="display:none">Accueil</a>
+          <a href="about.html" data-lang="en">About</a>
+          <a href="about.html" data-lang="fr" style="display:none">À Propos</a>
+          <a href="admissions.html" data-lang="en">Admissions</a>
+          <a href="admissions.html" data-lang="fr" style="display:none">Admission</a>
+          <a href="news.html" data-lang="en">News</a>
+          <a href="news.html" data-lang="fr" style="display:none">Actualités</a>
+          <a href="contact.html" data-lang="en">Contact</a>
+          <a href="contact.html" data-lang="fr" style="display:none">Contact</a>
         </div>
       </nav>
     </div>
@@ -38,15 +48,180 @@
 
   <main id="main" class="container" tabindex="-1">
     <article class="section">
-      <h1>Admissions</h1>
-      <p>We welcome prospective families to apply. Our admissions process is simple and transparent.</p>
-      <h2>How to Apply</h2>
-      <ol>
-        <li>Review admission criteria.</li>
-        <li>Submit the online application.</li>
-        <li>Attend an open day or schedule a tour.</li>
-      </ol>
-      <p><a class="cta" href="contact.html">Contact Admissions</a></p>
+      <h1 data-lang="en">Admissions</h1>
+      <h1 data-lang="fr" style="display:none">Admission</h1>
+      <p data-lang="en">Apply to IME and join our community of excellent students and professionals. We welcome applications for all our programs.</p>
+      <p data-lang="fr" style="display:none">Postulez à IME et rejoignez notre communauté d'étudiants et de professionnels excellents. Nous accueillons les candidatures pour tous nos programmes.</p>
+
+      <h2 data-lang="en">National Programs</h2>
+      <h2 data-lang="fr" style="display:none">Programmes Nationaux</h2>
+      <table style="width:100%;border-collapse:collapse;margin:1rem 0">
+        <thead>
+          <tr style="background:#f0f0f0;border-bottom:2px solid var(--ime-blue)">
+            <th style="padding:1rem;text-align:left" data-lang="en">Program</th>
+            <th style="padding:1rem;text-align:left" data-lang="fr" style="display:none">Programme</th>
+            <th style="padding:1rem;text-align:left" data-lang="en">Admission Mode</th>
+            <th style="padding:1rem;text-align:left" data-lang="fr" style="display:none">Mode d'Admission</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #ddd">
+            <td style="padding:1rem" data-lang="en">Engineering (Polytech Douala)</td>
+            <td style="padding:1rem;display:none" data-lang="fr">Ingénierie (Polytech Douala)</td>
+            <td style="padding:1rem" data-lang="en">Exam (Concours)</td>
+            <td style="padding:1rem;display:none" data-lang="fr">Concours</td>
+          </tr>
+          <tr style="border-bottom:1px solid #ddd">
+            <td style="padding:1rem" data-lang="en">BTS Industrial</td>
+            <td style="padding:1rem;display:none" data-lang="fr">BTS Industriel</td>
+            <td style="padding:1rem" data-lang="en">File Review</td>
+            <td style="padding:1rem;display:none" data-lang="fr">Étude de Dossier</td>
+          </tr>
+          <tr style="border-bottom:1px solid #ddd">
+            <td style="padding:1rem" data-lang="en">BTS Management</td>
+            <td style="padding:1rem;display:none" data-lang="fr">BTS Gestion</td>
+            <td style="padding:1rem" data-lang="en">File Review</td>
+            <td style="padding:1rem;display:none" data-lang="fr">Étude de Dossier</td>
+          </tr>
+          <tr style="border-bottom:1px solid #ddd">
+            <td style="padding:1rem" data-lang="en">Professional License</td>
+            <td style="padding:1rem;display:none" data-lang="fr">Licence Professionnelle</td>
+            <td style="padding:1rem" data-lang="en">File Review</td>
+            <td style="padding:1rem;display:none" data-lang="fr">Étude de Dossier</td>
+          </tr>
+          <tr style="border-bottom:1px solid #ddd">
+            <td style="padding:1rem" data-lang="en">Master Professional</td>
+            <td style="padding:1rem;display:none" data-lang="fr">Master Professionnel</td>
+            <td style="padding:1rem" data-lang="en">File Review</td>
+            <td style="padding:1rem;display:none" data-lang="fr">Étude de Dossier</td>
+          </tr>
+          <tr style="border-bottom:1px solid #ddd">
+            <td style="padding:1rem" data-lang="en">French Master</td>
+            <td style="padding:1rem;display:none" data-lang="fr">Mastère Français</td>
+            <td style="padding:1rem" data-lang="en">File Review / VAP</td>
+            <td style="padding:1rem;display:none" data-lang="fr">Étude de Dossier / VAP</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 data-lang="en">International Programs</h2>
+      <h2 data-lang="fr" style="display:none">Programmes Internationaux</h2>
+      <table style="width:100%;border-collapse:collapse;margin:1rem 0">
+        <thead>
+          <tr style="background:#f0f0f0;border-bottom:2px solid var(--ime-red)">
+            <th style="padding:1rem;text-align:left" data-lang="en">Program</th>
+            <th style="padding:1rem;text-align:left" data-lang="fr" style="display:none">Programme</th>
+            <th style="padding:1rem;text-align:left" data-lang="en">Admission Mode</th>
+            <th style="padding:1rem;text-align:left" data-lang="fr" style="display:none">Mode d'Admission</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #ddd">
+            <td style="padding:1rem" data-lang="en">Engineering (EFREI Paris)</td>
+            <td style="padding:1rem;display:none" data-lang="fr">Ingénierie (EFREI Paris)</td>
+            <td style="padding:1rem" data-lang="en">Exam (Concours)</td>
+            <td style="padding:1rem;display:none" data-lang="fr">Concours</td>
+          </tr>
+          <tr style="border-bottom:1px solid #ddd">
+            <td style="padding:1rem" data-lang="en">Bachelor (EMN, SUP DE CO, ESG UQAM)</td>
+            <td style="padding:1rem;display:none" data-lang="fr">Bachelor (EMN, SUP DE CO, ESG UQAM)</td>
+            <td style="padding:1rem" data-lang="en">Exam (Concours)</td>
+            <td style="padding:1rem;display:none" data-lang="fr">Concours</td>
+          </tr>
+          <tr style="border-bottom:1px solid #ddd">
+            <td style="padding:1rem" data-lang="en">Hotel Management License (IAE Metz)</td>
+            <td style="padding:1rem;display:none" data-lang="fr">Licence Hôtellerie (IAE Metz)</td>
+            <td style="padding:1rem" data-lang="en">File Review</td>
+            <td style="padding:1rem;display:none" data-lang="fr">Étude de Dossier</td>
+          </tr>
+          <tr style="border-bottom:1px solid #ddd">
+            <td style="padding:1rem" data-lang="en">Canadian MBA (ESG UQAM)</td>
+            <td style="padding:1rem;display:none" data-lang="fr">MBA Canadien (ESG UQAM)</td>
+            <td style="padding:1rem" data-lang="en">File Review / VAP</td>
+            <td style="padding:1rem;display:none" data-lang="fr">Étude de Dossier / VAP</td>
+          </tr>
+          <tr style="border-bottom:1px solid #ddd">
+            <td style="padding:1rem" data-lang="en">International DBA (BSI Luxembourg)</td>
+            <td style="padding:1rem;display:none" data-lang="fr">DBA International (BSI Luxembourg)</td>
+            <td style="padding:1rem" data-lang="en">File Review</td>
+            <td style="padding:1rem;display:none" data-lang="fr">Étude de Dossier</td>
+          </tr>
+          <tr style="border-bottom:1px solid #ddd">
+            <td style="padding:1rem" data-lang="en">French Master (UHA)</td>
+            <td style="padding:1rem;display:none" data-lang="fr">Mastère Français (UHA)</td>
+            <td style="padding:1rem" data-lang="en">File Review / VAP</td>
+            <td style="padding:1rem;display:none" data-lang="fr">Étude de Dossier / VAP</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 data-lang="en">Popular Programs</h2>
+      <h2 data-lang="fr" style="display:none">Programmes Populaires</h2>
+      
+      <h3 data-lang="en">Engineering (Polytech Douala)</h3>
+      <h3 data-lang="fr" style="display:none">Ingénierie (Polytech Douala)</h3>
+      <ul>
+        <li data-lang="en">Civil Engineering</li>
+        <li data-lang="fr" style="display:none">Génie Civil</li>
+        <li data-lang="en">Electrical Engineering</li>
+        <li data-lang="fr" style="display:none">Génie Électrique</li>
+        <li data-lang="en">Computer Science Engineering</li>
+        <li data-lang="fr" style="display:none">Génie Informatique</li>
+      </ul>
+
+      <h2 data-lang="en" style="margin-top:2rem">Application Form</h2>
+      <h2 data-lang="fr" style="display:none;margin-top:2rem">Formulaire de Demande d'Admission</h2>
+      
+      <form action="#" method="post" style="display:grid;gap:1rem;max-width:600px;margin-top:1rem">
+        <div>
+          <label for="name" data-lang="en">Full Name *</label>
+          <label for="name" data-lang="fr" style="display:none">Nom Complet *</label>
+          <input id="name" name="name" required style="padding:.75rem;border:1px solid #d1d5db;border-radius:6px;width:100%">
+        </div>
+
+        <div>
+          <label for="email" data-lang="en">Email *</label>
+          <label for="email" data-lang="fr" style="display:none">Email *</label>
+          <input id="email" name="email" type="email" required style="padding:.75rem;border:1px solid #d1d5db;border-radius:6px;width:100%">
+        </div>
+
+        <div>
+          <label for="phone" data-lang="en">Phone Number *</label>
+          <label for="phone" data-lang="fr" style="display:none">Numéro de Téléphone *</label>
+          <input id="phone" name="phone" type="tel" required style="padding:.75rem;border:1px solid #d1d5db;border-radius:6px;width:100%">
+        </div>
+
+        <div>
+          <label for="program" data-lang="en">Program *</label>
+          <label for="program" data-lang="fr" style="display:none">Programme *</label>
+          <select id="program" name="program" required style="padding:.75rem;border:1px solid #d1d5db;border-radius:6px;width:100%">
+            <option data-lang="en">Select a program</option>
+            <option data-lang="fr" style="display:none">Sélectionnez un programme</option>
+            <option data-lang="en">Engineering (Polytech Douala)</option>
+            <option data-lang="fr" style="display:none">Ingénierie (Polytech Douala)</option>
+            <option data-lang="en">BTS Industrial</option>
+            <option data-lang="fr" style="display:none">BTS Industriel</option>
+            <option data-lang="en">BTS Management</option>
+            <option data-lang="fr" style="display:none">BTS Gestion</option>
+            <option data-lang="en">Bachelor Degree</option>
+            <option data-lang="fr" style="display:none">Bachelor</option>
+            <option data-lang="en">Master's Program</option>
+            <option data-lang="fr" style="display:none">Master</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message" data-lang="en">Message</label>
+          <label for="message" data-lang="fr" style="display:none">Message</label>
+          <textarea id="message" name="message" rows="5" style="padding:.75rem;border:1px solid #d1d5db;border-radius:6px;width:100%"></textarea>
+        </div>
+
+        <button class="cta" type="submit" data-lang="en">Submit Application</button>
+        <button class="cta" type="submit" data-lang="fr" style="display:none">Soumettre la Candidature</button>
+      </form>
+
+      <p style="margin-top:2rem;font-size:0.95rem" data-lang="en"><strong>Contact Admissions:</strong> infos@ime-school.com | +237 683 55 78 34</p>
+      <p style="margin-top:2rem;font-size:0.95rem;display:none" data-lang="fr"><strong>Contacter l'Admission:</strong> infos@ime-school.com | +237 683 55 78 34</p>
     </article>
   </main>
 
@@ -54,15 +229,18 @@
     <div class="container grid">
       <div>
         <strong>IME School</strong>
-        <p style="margin:0.5rem 0 0">Inspiring Minds &amp; Excellence</p>
+        <p style="margin:0.5rem 0 0" data-lang="en">Excellence in Education</p>
+        <p style="margin:0.5rem 0 0;display:none" data-lang="fr">Excellence en Éducation</p>
       </div>
       <div>
-        <strong>Resources</strong>
-        <p style="margin:0.5rem 0 0"><a href="#">Calendar</a><br><a href="#">Reports</a></p>
+        <strong data-lang="en">Resources</strong>
+        <strong data-lang="fr" style="display:none">Ressources</strong>
+        <p style="margin:0.5rem 0 0"><a href="#" data-lang="en">Calendar</a><a href="#" data-lang="fr" style="display:none">Calendrier</a><br><a href="#">Facebook</a></p>
       </div>
       <div>
-        <strong>Follow</strong>
-        <p style="margin:0.5rem 0 0"><a href="#">Facebook</a><br><a href="#">Twitter</a></p>
+        <strong data-lang="en">Follow Us</strong>
+        <strong data-lang="fr" style="display:none">Suivez-nous</strong>
+        <p style="margin:0.5rem 0 0"><a href="#">LinkedIn</a><br><a href="#">Instagram</a></p>
       </div>
     </div>
   </footer>

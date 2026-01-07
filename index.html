@@ -28,25 +28,38 @@
         <a href="index.html" class="logo" aria-label="IME School">IME</a>
         <div>
           <div style="font-weight:700">IME School</div>
-          <div style="font-size:0.85rem;opacity:0.9">Inspiring Minds &amp; Excellence</div>
+          <div style="font-size:0.85rem;opacity:0.9" data-lang="en">Excellence in Education</div>
+          <div style="font-size:0.85rem;opacity:0.9;display:none" data-lang="fr">Excellence en Éducation</div>
         </div>
       </div>
       <nav aria-label="Main navigation">
+        <div class="lang-switcher">
+          <button class="lang-btn lang-btn--active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
         <button id="nav-toggle" class="hamburger" aria-expanded="false" aria-controls="nav">☰</button>
         <div id="nav" class="nav" role="menu">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="admissions.html">Admissions</a>
-          <a href="news.html">News</a>
-          <a href="contact.html">Contact</a>
+          <a href="index.html" data-lang="en">Home</a>
+          <a href="index.html" data-lang="fr" style="display:none">Accueil</a>
+          <a href="about.html" data-lang="en">About</a>
+          <a href="about.html" data-lang="fr" style="display:none">À Propos</a>
+          <a href="admissions.html" data-lang="en">Admissions</a>
+          <a href="admissions.html" data-lang="fr" style="display:none">Admission</a>
+          <a href="news.html" data-lang="en">News</a>
+          <a href="news.html" data-lang="fr" style="display:none">Actualités</a>
+          <a href="contact.html" data-lang="en">Contact</a>
+          <a href="contact.html" data-lang="fr" style="display:none">Contact</a>
         </div>
       </nav>
     </div>
     <div class="hero">
       <div class="container">
-        <h1>Welcome to IME School</h1>
-        <p>Building future leaders through a balanced curriculum, caring teachers, and a supportive community.</p>
-        <a class="cta" href="admissions.html">Apply Now</a>
+        <h1 data-lang="en">Welcome to IME School</h1>
+        <h1 data-lang="fr" style="display:none">Bienvenue à IME School</h1>
+        <p data-lang="en">We train in excellence and for excellence. Discover our diverse programs and join our community of future leaders.</p>
+        <p data-lang="fr" style="display:none">Nous formons dans l'excellence et pour l'excellence. Découvrez nos programmes variés et rejoignez notre communauté de futurs leaders.</p>
+        <a class="cta" href="admissions.html" data-lang="en">Apply Now</a>
+        <a class="cta" href="admissions.html" data-lang="fr" style="display:none">Postuler Maintenant</a>
         <picture>
           <source type="image/avif" srcset="assets/images/logo-ime-p.avif" />
           <source type="image/webp" srcset="assets/images/logo-ime-p.webp" />
@@ -54,16 +67,22 @@
         </picture>
         <div class="cards" style="margin-top:1.5rem">
           <div class="card">
-            <h3>Academic Excellence</h3>
-            <p>Rigorous curriculum and personalised learning tracks.</p>
+            <h3 data-lang="en">Multiple Programs</h3>
+            <h3 data-lang="fr" style="display:none">Programmes Variés</h3>
+            <p data-lang="en">Engineering, BTS, Bachelor, Master — choose your path.</p>
+            <p data-lang="fr" style="display:none">Ingénierie, BTS, Bachelor, Master — choisissez votre parcours.</p>
           </div>
           <div class="card">
-            <h3>Extracurriculars</h3>
-            <p>Clubs, sports, and arts to develop the whole child.</p>
+            <h3 data-lang="en">International Partnerships</h3>
+            <h3 data-lang="fr" style="display:none">Partenariats Internationaux</h3>
+            <p data-lang="en">Study in France, Canada, and more with partner universities.</p>
+            <p data-lang="fr" style="display:none">Étudiez en France, au Canada et ailleurs avec nos universités partenaires.</p>
           </div>
           <div class="card">
-            <h3>Community</h3>
-            <p>Parent partnership and community outreach programs.</p>
+            <h3 data-lang="en">Professional Growth</h3>
+            <h3 data-lang="fr" style="display:none">Croissance Professionnelle</h3>
+            <p data-lang="en">Career support, internships, and industry connections.</p>
+            <p data-lang="fr" style="display:none">Support carrière, stages et connexions avec l'industrie.</p>
           </div>
         </div>
       </div>
@@ -74,31 +93,53 @@
     <section class="main-content">
       <div>
         <article class="section">
-          <h2>Latest News</h2>
-          <p>Read about upcoming events, student achievements, and school announcements.</p>
-          <p><a href="news.html">See all news →</a></p>
+          <h2 data-lang="en">Our Programs</h2>
+          <h2 data-lang="fr" style="display:none">Nos Programmes</h2>
+          <p data-lang="en">IME offers a wide range of programs designed to meet the needs of students and professionals:</p>
+          <p data-lang="fr" style="display:none">IME propose une large gamme de programmes conçus pour répondre aux besoins des étudiants et des professionnels:</p>
+          <ul>
+            <li data-lang="en">Engineering (Polytech Douala)</li>
+            <li data-lang="fr" style="display:none">Ingénierie (Polytech Douala)</li>
+            <li data-lang="en">BTS (Industrial & Management)</li>
+            <li data-lang="fr" style="display:none">BTS (Industriel & Gestion)</li>
+            <li data-lang="en">Bachelor Degrees (Canadian & French)</li>
+            <li data-lang="fr" style="display:none">Bachelor (Canadien & Français)</li>
+            <li data-lang="en">Master's Programs</li>
+            <li data-lang="fr" style="display:none">Programmes de Master</li>
+            <li data-lang="en">Executive MBA & DBA</li>
+            <li data-lang="fr" style="display:none">MBA Exécutif & DBA</li>
+          </ul>
+          <p><a href="admissions.html" data-lang="en">View all programs →</a><a href="admissions.html" data-lang="fr" style="display:none">Voir tous les programmes →</a></p>
         </article>
 
         <article class="section" style="margin-top:1rem">
-          <h2>Why IME?</h2>
-          <p>IME blends strong academics with social-emotional learning, preparing students for success in and out of the classroom.</p>
+          <h2 data-lang="en">Why IME?</h2>
+          <h2 data-lang="fr" style="display:none">Pourquoi IME?</h2>
+          <p data-lang="en">IME is dedicated to providing quality education with international standards. Our faculty, facilities, and partnerships prepare students for global careers.</p>
+          <p data-lang="fr" style="display:none">IME est dédié à fournir une éducation de qualité aux normes internationales. Notre corps enseignant, nos installations et nos partenariats préparent les étudiants aux carrières mondiales.</p>
         </article>
       </div>
 
       <aside class="sidebar">
         <div class="section">
-          <h3>Quick Links</h3>
+          <h3 data-lang="en">Quick Links</h3>
+          <h3 data-lang="fr" style="display:none">Liens Rapides</h3>
           <div class="quick-links">
-            <a href="admissions.html">Admissions</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="about.html">Our Mission</a>
+            <a href="admissions.html" data-lang="en">Apply for Admissions</a>
+            <a href="admissions.html" data-lang="fr" style="display:none">Demander l'Admission</a>
+            <a href="contact.html" data-lang="en">Contact Us</a>
+            <a href="contact.html" data-lang="fr" style="display:none">Nous Contacter</a>
+            <a href="about.html" data-lang="en">About Us</a>
+            <a href="about.html" data-lang="fr" style="display:none">À Propos de Nous</a>
           </div>
         </div>
 
         <div class="section" style="margin-top:1rem">
-          <h3>Contact</h3>
-          <p>Email: info@ime-school.com</p>
-          <p>Phone: +1 (555) 123-4567</p>
+          <h3 data-lang="en">Contact Info</h3>
+          <h3 data-lang="fr" style="display:none">Informations de Contact</h3>
+          <p>📧 infos@ime-school.com</p>
+          <p>📱 +237 683 55 78 34</p>
+          <p>☎️ +237 690 523 505</p>
         </div>
       </aside>
     </section>
@@ -108,15 +149,18 @@
     <div class="container grid">
       <div>
         <strong>IME School</strong>
-        <p style="margin:0.5rem 0 0">Inspiring Minds &amp; Excellence</p>
+        <p style="margin:0.5rem 0 0" data-lang="en">Excellence in Education</p>
+        <p style="margin:0.5rem 0 0;display:none" data-lang="fr">Excellence en Éducation</p>
       </div>
       <div>
-        <strong>Resources</strong>
-        <p style="margin:0.5rem 0 0"><a href="#">Calendar</a><br><a href="#">Reports</a></p>
+        <strong data-lang="en">Resources</strong>
+        <strong data-lang="fr" style="display:none">Ressources</strong>
+        <p style="margin:0.5rem 0 0"><a href="#" data-lang="en">Calendar</a><a href="#" data-lang="fr" style="display:none">Calendrier</a><br><a href="#">Facebook</a></p>
       </div>
       <div>
-        <strong>Follow</strong>
-        <p style="margin:0.5rem 0 0"><a href="#">Facebook</a><br><a href="#">Twitter</a></p>
+        <strong data-lang="en">Follow Us</strong>
+        <strong data-lang="fr" style="display:none">Suivez-nous</strong>
+        <p style="margin:0.5rem 0 0"><a href="#">LinkedIn</a><br><a href="#">Instagram</a></p>
       </div>
     </div>
   </footer>
