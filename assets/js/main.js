@@ -26,7 +26,7 @@ function updateLanguageButtonState(lang){
 
 function initializeLanguage(){
   // Set default language
-  const savedLang = localStorage.getItem('ime-lang') || 'en';
+  const savedLang = localStorage.getItem('ime-lang') || 'fr';
   setLanguage(savedLang);
   
   // Attach click handlers to language buttons
