@@ -2,32 +2,47 @@
 function setLanguage(lang){
   localStorage.setItem('ime-lang', lang);
   document.documentElement.lang = lang;
+  // Toggle all elements with data-lang attribute
   document.querySelectorAll('[data-lang]').forEach(el=>{
-    el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
-  });
-  document.querySelectorAll('[data-lang-inline]').forEach(el=>{
-    el.textContent = el.getAttribute(`data-${lang}`) || el.textContent;
+    const elLang = el.getAttribute('data-lang');
+    if(elLang === lang){
+      el.style.display = '';  // Remove inline display style
+    } else {
+      el.style.display = 'none';
+    }
   });
   updateLanguageButtonState(lang);
 }
 
 function updateLanguageButtonState(lang){
-  document.querySelectorAll('.lang-btn').forEach(btn=>{
-    btn.classList.toggle('lang-btn--active', btn.getAttribute('data-lang') === lang);
+  document.querySelectorAll('[data-lang-btn]').forEach(btn=>{
+    if(btn.getAttribute('data-lang-btn') === lang){
+      btn.classList.add('lang-btn--active');
+    } else {
+      btn.classList.remove('lang-btn--active');
+    }
   });
 }
 
 function initializeLanguage(){
+  // Set default language
   const savedLang = localStorage.getItem('ime-lang') || 'en';
   setLanguage(savedLang);
-  document.querySelectorAll('.lang-btn').forEach(btn=>{
-    btn.addEventListener('click', ()=> setLanguage(btn.getAttribute('data-lang')));
+  
+  // Attach click handlers to language buttons
+  document.querySelectorAll('[data-lang-btn]').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const lang = btn.getAttribute('data-lang-btn');
+      setLanguage(lang);
+    });
   });
 }
 
-document.addEventListener('DOMContentLoaded', ()=>{
-  initializeLanguage();
+// Initialize language immediately since script is at end of body
+initializeLanguage();
 
+document.addEventListener('DOMContentLoaded', ()=>{
   const btn = document.getElementById('nav-toggle');
   const nav = document.getElementById('nav');
   if(btn && nav){
