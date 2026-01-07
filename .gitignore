@@ -1,0 +1,15 @@
+# Prevent node_modules from being committed to git
+node_modules/
+.env
+.env.local
+.DS_Store
+*.log
+.vercel/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artifacts (optional, since we're deploying the source directly)

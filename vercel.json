@@ -1,0 +1,5 @@
+{
+  "buildCommand": "npm run images:optimize",
+  "outputDirectory": ".",
+  "installCommand": "npm install"
+}
