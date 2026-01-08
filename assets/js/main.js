@@ -209,21 +209,24 @@ document.addEventListener('DOMContentLoaded', ()=>{
     // Pagination dots
     const dotsContainer = document.getElementById('carousel-dots');
     function updateDots(){
+      if(!dotsContainer) return;
       const dots = Array.from(dotsContainer.querySelectorAll('.carousel-dot'));
       dots.forEach((dot, i) => {
         if(i === index) dot.classList.add('active');
         else dot.classList.remove('active');
       });
     }
-    // Create dots
-    slides.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.className = 'carousel-dot';
-      dot.setAttribute('role', 'tab');
-      dot.setAttribute('aria-label', `Partner ${i + 1}`);
-      dot.addEventListener('click', () => { index = i; slideTo(index); startAuto(); updateDots(); });
-      dotsContainer.appendChild(dot);
-    });
+    // Create dots (if container exists)
+    if(dotsContainer){
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot';
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', `Partner ${i + 1}`);
+        dot.addEventListener('click', () => { index = i; slideTo(index); startAuto(); updateDots(); });
+        dotsContainer.appendChild(dot);
+      });
+    }
 
     // initial layout
     slideTo(index);
