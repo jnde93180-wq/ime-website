@@ -361,10 +361,10 @@ a:focus {
 }
 
 .carousel-dot {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
-  background: rgba(11, 87, 164, 0.25);
+  background: rgba(11, 87, 164, 0.2);
   border: none;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -380,8 +380,8 @@ a:focus {
 
 .carousel-dot.active {
   background: var(--ime-blue);
-  box-shadow: 0 0 0 2px rgba(11, 87, 164, 0.2);
-  transform: scale(1.2);
+  box-shadow: 0 0 0 2px rgba(11, 87, 164, 0.1);
+  transform: scale(1.4);
 }
 
 .partner-slide img {
@@ -806,8 +806,8 @@ tr:last-child td {
   }
 
   .carousel-dot {
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
   }
 
   .carousel-dot.active {
