@@ -174,6 +174,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       trackStyle.transition = 'none';
       stopAuto();
     }
+
     function pointerMove(e){
       if(!isDown) return;
       const x = (e.touches ? e.touches[0].clientX : e.clientX);
@@ -190,16 +191,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
       } else {
         slideTo(index);
       }
-      startAuto();
+      // Restart auto after a short delay to avoid immediate jumps
+      setTimeout(startAuto, 350);
     }
 
-    // Pointer / touch events
+    // Pointer / touch events (add pointercancel/leave handlers for robustness)
     track.addEventListener('pointerdown', pointerDown, {passive:true});
     window.addEventListener('pointermove', pointerMove, {passive:true});
     window.addEventListener('pointerup', pointerUp);
+    track.addEventListener('pointercancel', ()=>{ if(isDown) { isDown=false; slideTo(index); setTimeout(startAuto,350); } });
+    track.addEventListener('pointerleave', ()=>{ if(isDown) { isDown=false; slideTo(index); setTimeout(startAuto,350); } });
     track.addEventListener('touchstart', pointerDown, {passive:true});
     track.addEventListener('touchmove', pointerMove, {passive:true});
     track.addEventListener('touchend', pointerUp);
+    track.addEventListener('touchcancel', ()=>{ if(isDown) { isDown=false; slideTo(index); setTimeout(startAuto,350); } });
 
     // initial layout
     slideTo(index);

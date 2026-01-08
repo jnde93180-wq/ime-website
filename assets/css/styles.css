@@ -60,9 +60,10 @@ html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,Helvetica,Arial
 
 /* Partners Grid Page */
 .partners-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1rem}
-.partner-item{background:#f8fbff;padding:1.5rem;border-radius:10px;text-align:center;box-shadow:0 2px 8px rgba(2,6,23,0.06);transition:transform 0.3s,box-shadow 0.3s}
-.partner-item:hover{transform:translateY(-4px);box-shadow:0 6px 18px rgba(2,6,23,0.12)}
-.partner-item img{max-height:100px;max-width:100%;object-fit:contain;margin-bottom:1rem}
+.partner-item{background:#eef5fb;padding:1.5rem;border-radius:10px;text-align:center;box-shadow:0 6px 18px rgba(9,30,66,0.06);transition:transform 0.3s,box-shadow 0.3s}
+.partner-item:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(9,30,66,0.12)}
+.partner-item img{max-height:100px;max-width:100%;object-fit:contain;margin-bottom:1rem;filter:contrast(1.1) saturate(1.05)}
+.partner-item img.invert{filter:invert(1) brightness(1.2) contrast(1.15)}
 .partner-item p{font-weight:600;color:var(--ime-blue);margin:0}
 
 /* Utility for images */
