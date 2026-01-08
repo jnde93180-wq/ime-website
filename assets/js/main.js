@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     if(!track || !viewport) return;
     let slides = Array.from(track.children);
     const visible = 1;
-    const originalCount = slides.length;
+    const originalCount = slides.length; // This is the count BEFORE cloning
     
     // Clone first and last slides for smooth infinite loop
     if(originalCount > 1){
@@ -109,10 +109,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
       const lastClone = slides[originalCount - 1].cloneNode(true);
       track.appendChild(firstClone);
       track.insertBefore(lastClone, slides[0]);
-      slides = Array.from(track.children);
+      slides = Array.from(track.children); // Now slides array has originalCount + 2 elements
     }
     
-    let index = originalCount > 1 ? 1 : 0; // Start at the real first slide (after clone)
+    let index = originalCount > 1 ? 1 : 0; // Start at the real first slide (after last-clone)
     let timer = null;
 
     function getGap(){
@@ -123,6 +123,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
     function slideTo(i, immediate = false){
       const gap = getGap();
       const slideWidth = slides[0].getBoundingClientRect().width + gap;
+      
+      // Ensure slide width is valid
+      if(slideWidth <= 0) {
+        console.warn('Invalid slide width, retrying...');
+        requestAnimationFrame(() => slideTo(i, immediate));
+        return;
+      }
+      
       if(immediate){
         track.style.transition = 'none';
         track.style.transform = `translateX(-${i * slideWidth}px)`;
@@ -140,8 +148,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
       slideTo(index);
       updateDots();
       
-      // If we've reached the clone of the first slide, jump back seamlessly
-      if(originalCount > 1 && index >= slides.length - (originalCount - 1)){
+      // If we've reached the clone of the first slide (at the very end), jump back seamlessly
+      if(originalCount > 1 && index >= originalCount + 1){
         setTimeout(() => {
           index = 1; // Jump to real first slide
           slideTo(index, true);
@@ -274,10 +282,26 @@ document.addEventListener('DOMContentLoaded', ()=>{
       }
     }
 
-    // initial layout
-    slideTo(index);
-    updateDots();
-    startAuto();
+    // Wait for images to load, then initialize carousel layout
+    const imgs = Array.from(track.querySelectorAll('img'));
+    const imgPromises = imgs.map(img => 
+      new Promise(resolve => {
+        if(img.complete) resolve();
+        else {
+          img.addEventListener('load', resolve);
+          img.addEventListener('error', resolve);
+        }
+      })
+    );
+    
+    Promise.all(imgPromises).then(() => {
+      // Give browser time to calculate layout
+      requestAnimationFrame(() => {
+        slideTo(index);
+        updateDots();
+        startAuto();
+      });
+    });
   }
   initPartnersCarousel();
 
