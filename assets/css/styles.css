@@ -12,7 +12,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -51,7 +52,8 @@ img {
   display: block;
 }
 
-a, button {
+a,
+button {
   min-height: var(--touch-target);
   min-width: var(--touch-target);
 }
@@ -64,6 +66,11 @@ a, button {
   top: 0;
   z-index: 100;
   width: 100%;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header--scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .header .top {
@@ -103,17 +110,17 @@ a, button {
   flex-shrink: 0;
 }
 
-.brand > div {
+.brand>div {
   min-width: 0;
 }
 
-.brand > div > div {
+.brand>div>div {
   font-size: 0.7rem;
   line-height: 1.2;
   word-break: break-word;
 }
 
-.brand > div > div:first-child {
+.brand>div>div:first-child {
   font-weight: 700;
   font-size: 0.9rem;
 }
@@ -171,6 +178,7 @@ a, button {
   color: var(--ime-white);
   text-align: left;
   background: linear-gradient(90deg, var(--ime-blue), var(--ime-red));
+  margin-top: 0;
 }
 
 .hero h1 {
@@ -558,7 +566,7 @@ form {
   margin-top: 1rem;
 }
 
-form > div {
+form>div {
   display: flex;
   flex-direction: column;
 }
@@ -689,11 +697,11 @@ tr:last-child td {
     gap: 0.75rem;
   }
 
-  .brand > div > div:first-child {
+  .brand>div>div:first-child {
     font-size: 1.1rem;
   }
 
-  .brand > div > div {
+  .brand>div>div {
     font-size: 0.75rem;
   }
 
