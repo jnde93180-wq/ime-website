@@ -206,8 +206,28 @@ document.addEventListener('DOMContentLoaded', ()=>{
     track.addEventListener('touchend', pointerUp);
     track.addEventListener('touchcancel', ()=>{ if(isDown) { isDown=false; slideTo(index); setTimeout(startAuto,350); } });
 
+    // Pagination dots
+    const dotsContainer = document.getElementById('carousel-dots');
+    function updateDots(){
+      const dots = Array.from(dotsContainer.querySelectorAll('.carousel-dot'));
+      dots.forEach((dot, i) => {
+        if(i === index) dot.classList.add('active');
+        else dot.classList.remove('active');
+      });
+    }
+    // Create dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot';
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', `Partner ${i + 1}`);
+      dot.addEventListener('click', () => { index = i; slideTo(index); startAuto(); updateDots(); });
+      dotsContainer.appendChild(dot);
+    });
+
     // initial layout
     slideTo(index);
+    updateDots();
     startAuto();
   }
   initPartnersCarousel();
