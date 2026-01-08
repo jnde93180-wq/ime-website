@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       index += visible;
       if(index > maxIndex) index = 0;
       slideTo(index);
+      updateDots();
     }
 
     function prevGroup(){
@@ -127,6 +128,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       index -= visible;
       if(index < 0) index = maxIndex;
       slideTo(index);
+      updateDots();
     }
 
     function startAuto(){
