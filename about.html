@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,6 +13,7 @@
   {"@context":"https://schema.org","@type":"Organization","name":"IME School","url":"https://www.ime-school.com"}
   </script>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="header">
@@ -19,25 +21,28 @@
       <div class="brand">
         <a href="index.html" aria-label="IME Home">
           <picture>
-            <source type="image/avif" srcset="assets/images/logo-ime-p.avif" />
-            <source type="image/webp" srcset="assets/images/logo-ime-p.webp" />
-            <img src="assets/images/logo-ime-p.png" alt="IME Logo" style="height:70px;width:auto;margin-right:1rem">
+            <source type="image/avif" srcset="assets/images/logo-ime-p.avif">
+            <source type="image/webp" srcset="assets/images/logo-ime-p.webp">
+            <img src="assets/images/logo-ime-p.png" alt="IME Logo" class="brand-logo">
           </picture>
         </a>
-        <div>
-          <div style="font-weight:700;font-size:1.1rem">IME</div>
-          <div style="font-size:0.75rem;opacity:0.95;line-height:1.2" data-lang="en">Higher Institute of Management & Entrepreneurship</div>
-          <div style="font-size:0.75rem;opacity:0.95;line-height:1.2;display:none" data-lang="fr">Institut Supérieur de Management et de l'Entrepreneuriat</div>
-          <div style="font-size:0.75rem;opacity:0.9;font-style:italic;margin-top:0.25rem" data-lang="en">Passion for Excellence</div>
-          <div style="font-size:0.75rem;opacity:0.9;font-style:italic;margin-top:0.25rem;display:none" data-lang="fr">Passion pour l'Excellence</div>
+        <div class="brand-text">
+          <div class="brand-name">IME</div>
+          <div class="brand-subtitle" data-lang="en">Higher Institute of Management & Entrepreneurship</div>
+          <div class="brand-subtitle" data-lang="fr" style="display:none">Institut Supérieur de Management et de
+            l'Entrepreneuriat</div>
+          <div class="brand-slogan" data-lang="en">Passion for Excellence</div>
+          <div class="brand-slogan" data-lang="fr" style="display:none">Passion pour l'Excellence</div>
         </div>
       </div>
       <nav aria-label="Main navigation">
-        <div class="lang-switcher">
-          <button class="lang-btn" data-lang-btn="en">EN</button>
-          <button class="lang-btn lang-btn--active" data-lang-btn="fr">FR</button>
+        <div class="header-controls">
+          <div class="lang-switcher">
+            <button class="lang-btn" data-lang-btn="en">EN</button>
+            <button class="lang-btn lang-btn--active" data-lang-btn="fr">FR</button>
+          </div>
+          <button id="nav-toggle" class="hamburger" aria-expanded="false" aria-controls="nav">☰</button>
         </div>
-        <button id="nav-toggle" class="hamburger" aria-expanded="false" aria-controls="nav">☰</button>
         <div id="nav" class="nav" role="menu">
           <a href="index.html" data-lang="en">Home</a>
           <a href="index.html" data-lang="fr" style="display:none">Accueil</a>
@@ -62,20 +67,41 @@
         <article class="section">
           <h1 data-lang="en">Our Vision & Mission</h1>
           <h1 data-lang="fr" style="display:none">Notre Vision & Mission</h1>
-          <p data-lang="en">We work every day to provide you with a curriculum based on: pedagogical rigor, academic excellence, civic behavior, and professionalization. Through this approach, we aim to reduce brain drain by offering training at international standards. We continuously collaborate with companies to bridge the gap between their human resource needs and management and engineering training in Africa.</p>
-          <p data-lang="fr" style="display:none">Nous travaillons chaque jour à vous offrir un cursus de formation fondé sur : la rigueur pédagogique, l'excellence académique, le comportement citoyen et la professionnalisation. Nous souhaitons à travers cette démarche, contribuer à réduire l'expatriation des cadres et des dirigeants, tous à la recherche de formations à la hauteur des standards internationaux. Aussi, nous collaborons continuellement avec les entreprises, afin de réduire la fracture actuelle entre les besoins en ressources humaines de ces dernières et les offres de formations en management et ingénierie en Afrique.</p>
+          <p data-lang="en">We work every day to provide you with a curriculum based on: pedagogical rigor, academic
+            excellence, civic behavior, and professionalization. Through this approach, we aim to reduce brain drain by
+            offering training at international standards. We continuously collaborate with companies to bridge the gap
+            between their human resource needs and management and engineering training in Africa.</p>
+          <p data-lang="fr" style="display:none">Nous travaillons chaque jour à vous offrir un cursus de formation fondé
+            sur : la rigueur pédagogique, l'excellence académique, le comportement citoyen et la professionnalisation.
+            Nous souhaitons à travers cette démarche, contribuer à réduire l'expatriation des cadres et des dirigeants,
+            tous à la recherche de formations à la hauteur des standards internationaux. Aussi, nous collaborons
+            continuellement avec les entreprises, afin de réduire la fracture actuelle entre les besoins en ressources
+            humaines de ces dernières et les offres de formations en management et ingénierie en Afrique.</p>
         </article>
 
         <article class="section" style="margin-top:1rem">
           <h2 data-lang="en">Why Choose IME?</h2>
           <h2 data-lang="fr" style="display:none">Pourquoi Choisir IME?</h2>
           <ol class="reasons-grid">
-            <li><span data-lang="en">1 — First institution in Central Africa certified ISO 9001</span><span data-lang="fr" style="display:none">1 — 1er établissement d'Afrique Centrale certifié ISO 9001</span></li>
-            <li><span data-lang="en">2 — 12+ years of experience; average 89% BTS and 95% HND pass rates</span><span data-lang="fr" style="display:none">2 — Plus de 12 ans d'expérience et toujours dans le top 10 des meilleurs établissements avec en moyenne 89% de réussite au BTS et 95% au HND</span></li>
-            <li><span data-lang="en">3 — Direct entry to 3rd year at partner institutions with double degrees</span><span data-lang="fr" style="display:none">3 — Accès direct en 3e année dans l'une des écoles partenaires pour les étudiants suivant des programmes internationaux, avec double diplomation associée</span></li>
-            <li><span data-lang="en">4 — Academic internships for all students; 85%+ placement rate</span><span data-lang="fr" style="display:none">4 — Stages académiques offerts à tous les étudiants et taux global d'insertion professionnelle de plus de 85%</span></li>
-            <li><span data-lang="en">5 — 3 training approaches: Project-based, Apprenticeship, Competency-based</span><span data-lang="fr" style="display:none">5 — 3 approches de formations : par projets, par alternance, et par compétences</span></li>
-            <li><span data-lang="en">6 — Faculty of experts, PhD candidates, PhDs and Professors</span><span data-lang="fr" style="display:none">6 — Des enseignants aux rangs d'experts, doctorants, docteurs et Professeurs</span></li>
+            <li><span data-lang="en">1 — First institution in Central Africa certified ISO 9001</span><span
+                data-lang="fr" style="display:none">1 — 1er établissement d'Afrique Centrale certifié ISO 9001</span>
+            </li>
+            <li><span data-lang="en">2 — 12+ years of experience; average 89% BTS and 95% HND pass rates</span><span
+                data-lang="fr" style="display:none">2 — Plus de 12 ans d'expérience et toujours dans le top 10 des
+                meilleurs établissements avec en moyenne 89% de réussite au BTS et 95% au HND</span></li>
+            <li><span data-lang="en">3 — Direct entry to 3rd year at partner institutions with double
+                degrees</span><span data-lang="fr" style="display:none">3 — Accès direct en 3e année dans l'une des
+                écoles partenaires pour les étudiants suivant des programmes internationaux, avec double diplomation
+                associée</span></li>
+            <li><span data-lang="en">4 — Academic internships for all students; 85%+ placement rate</span><span
+                data-lang="fr" style="display:none">4 — Stages académiques offerts à tous les étudiants et taux global
+                d'insertion professionnelle de plus de 85%</span></li>
+            <li><span data-lang="en">5 — 3 training approaches: Project-based, Apprenticeship,
+                Competency-based</span><span data-lang="fr" style="display:none">5 — 3 approches de formations : par
+                projets, par alternance, et par compétences</span></li>
+            <li><span data-lang="en">6 — Faculty of experts, PhD candidates, PhDs and Professors</span><span
+                data-lang="fr" style="display:none">6 — Des enseignants aux rangs d'experts, doctorants, docteurs et
+                Professeurs</span></li>
           </ol>
         </article>
 
@@ -85,8 +111,10 @@
           <ul>
             <li data-lang="en"><strong>Business Campus</strong> — Bonamoussadi, Douala</li>
             <li data-lang="fr" style="display:none"><strong>Campus Business</strong> — Bonamoussadi, Douala</li>
-            <li data-lang="en"><strong>ENG-INNOV Campus</strong> — Bonamoussadi, Douala (Built by IME engineering students)</li>
-            <li data-lang="fr" style="display:none"><strong>Campus ENG-INNOV</strong> — Bonamoussadi, Douala (Construit par les étudiants en Ingénierie d'IME)</li>
+            <li data-lang="en"><strong>ENG-INNOV Campus</strong> — Bonamoussadi, Douala (Built by IME engineering
+              students)</li>
+            <li data-lang="fr" style="display:none"><strong>Campus ENG-INNOV</strong> — Bonamoussadi, Douala (Construit
+              par les étudiants en Ingénierie d'IME)</li>
             <li data-lang="en"><strong>Leader Campus</strong> — Akwa, Douala</li>
             <li data-lang="fr" style="display:none"><strong>Campus Leader</strong> — Akwa, Douala</li>
             <li data-lang="en"><strong>Global Campus</strong> — Bafoussam</li>
@@ -99,7 +127,8 @@
           <h2 data-lang="fr" style="display:none">Nos Partenaires</h2>
           <p data-lang="en">Explore our partners and collaborations.</p>
           <p data-lang="fr" style="display:none">Explorez nos partenaires et collaborations.</p>
-          <p style="text-align:center;margin-top:1rem"><a href="partners.html" data-lang="en">View all partners →</a><a href="partners.html" data-lang="fr" style="display:none">Voir tous les partenaires →</a></p>
+          <p style="text-align:center;margin-top:1rem"><a href="partners.html" data-lang="en">View all partners →</a><a
+              href="partners.html" data-lang="fr" style="display:none">Voir tous les partenaires →</a></p>
         </article>
       </div>
 
@@ -124,14 +153,16 @@
     <div class="container grid">
       <div>
         <strong data-lang="en">IME — Higher Institute of Management & Entrepreneurship</strong>
-        <strong data-lang="fr" style="display:none">IME — Institut Supérieur de Management et de l'Entrepreneuriat</strong>
+        <strong data-lang="fr" style="display:none">IME — Institut Supérieur de Management et de
+          l'Entrepreneuriat</strong>
         <p style="margin:0.5rem 0 0;font-style:italic" data-lang="en">Passion for Excellence</p>
         <p style="margin:0.5rem 0 0;font-style:italic;display:none" data-lang="fr">Passion pour l'Excellence</p>
       </div>
       <div>
         <strong data-lang="en">Resources</strong>
         <strong data-lang="fr" style="display:none">Ressources</strong>
-        <p style="margin:0.5rem 0 0"><a href="#" data-lang="en">Calendar</a><a href="#" data-lang="fr" style="display:none">Calendrier</a><br><a href="#">Facebook</a></p>
+        <p style="margin:0.5rem 0 0"><a href="#" data-lang="en">Calendar</a><a href="#" data-lang="fr"
+            style="display:none">Calendrier</a><br><a href="#">Facebook</a></p>
       </div>
       <div>
         <strong data-lang="en">Follow Us</strong>
@@ -143,4 +174,5 @@
 
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>

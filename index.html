@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -20,32 +21,36 @@
   }
   </script>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="header">
     <div class="container top">
       <div class="brand">
-          <a href="index.html" aria-label="IME Home">
-            <picture>
-              <source type="image/avif" srcset="assets/images/logo-ime-p.avif" />
-              <source type="image/webp" srcset="assets/images/logo-ime-p.webp" />
-              <img src="assets/images/logo-ime-p.png" alt="IME Logo" style="height:70px;width:auto;margin-right:1rem">
-            </picture>
-          </a>
-        <div>
-          <div style="font-weight:700;font-size:1.1rem">IME</div>
-          <div style="font-size:0.75rem;opacity:0.95;line-height:1.2" data-lang="en">Higher Institute of Management & Entrepreneurship</div>
-          <div style="font-size:0.75rem;opacity:0.95;line-height:1.2;display:none" data-lang="fr">Institut Supérieur de Management et de l'Entrepreneuriat</div>
-          <div style="font-size:0.75rem;opacity:0.9;font-style:italic;margin-top:0.25rem" data-lang="en">Passion for Excellence</div>
-          <div style="font-size:0.75rem;opacity:0.9;font-style:italic;margin-top:0.25rem;display:none" data-lang="fr">Passion pour l'Excellence</div>
+        <a href="index.html" aria-label="IME Home">
+          <picture>
+            <source type="image/avif" srcset="assets/images/logo-ime-p.avif" />
+            <source type="image/webp" srcset="assets/images/logo-ime-p.webp" />
+            <img src="assets/images/logo-ime-p.png" alt="IME Logo" class="brand-logo">
+          </picture>
+        </a>
+        <div class="brand-text">
+          <div class="brand-name">IME</div>
+          <div class="brand-subtitle" data-lang="en">Higher Institute of Management & Entrepreneurship</div>
+          <div class="brand-subtitle" data-lang="fr" style="display:none">Institut Supérieur de Management et de
+            l'Entrepreneuriat</div>
+          <div class="brand-slogan" data-lang="en">Passion for Excellence</div>
+          <div class="brand-slogan" data-lang="fr" style="display:none">Passion pour l'Excellence</div>
         </div>
       </div>
       <nav aria-label="Main navigation">
-        <div class="lang-switcher">
-          <button class="lang-btn" data-lang-btn="en">EN</button>
-          <button class="lang-btn lang-btn--active" data-lang-btn="fr">FR</button>
+        <div class="header-controls">
+          <div class="lang-switcher">
+            <button class="lang-btn" data-lang-btn="en">EN</button>
+            <button class="lang-btn lang-btn--active" data-lang-btn="fr">FR</button>
+          </div>
+          <button id="nav-toggle" class="hamburger" aria-expanded="false" aria-controls="nav">☰</button>
         </div>
-        <button id="nav-toggle" class="hamburger" aria-expanded="false" aria-controls="nav">☰</button>
         <div id="nav" class="nav" role="menu">
           <a href="index.html" data-lang="en">Home</a>
           <a href="index.html" data-lang="fr" style="display:none">Accueil</a>
@@ -63,20 +68,25 @@
       </nav>
     </div>
   </header>
-  
+
   <div class="hero">
     <div class="container">
       <h1 data-lang="en">Welcome to IME</h1>
       <h1 data-lang="fr" style="display:none">Bienvenue à IME</h1>
-      <h2 style="font-size:1.2rem;font-weight:400;margin:0.5rem 0 1rem;opacity:0.95" data-lang="en">Higher Institute of Management & Entrepreneurship</h2>
-      <h2 style="font-size:1.2rem;font-weight:400;margin:0.5rem 0 1rem;opacity:0.95;display:none" data-lang="fr">Institut Supérieur de Management et de l'Entrepreneuriat</h2>
-      <p data-lang="en"><em>Passion for Excellence</em> — We train in excellence and for excellence. Discover our diverse programs and join our community of future leaders.</p>
-      <p data-lang="fr" style="display:none"><em>Passion pour l'Excellence</em> — Nous formons dans l'excellence et pour l'excellence. Découvrez nos programmes variés et rejoignez notre communauté de futurs leaders.</p>
-      
+      <h2 style="font-size:1.2rem;font-weight:400;margin:0.5rem 0 1rem;opacity:0.95" data-lang="en">Higher Institute of
+        Management & Entrepreneurship</h2>
+      <h2 style="font-size:1.2rem;font-weight:400;margin:0.5rem 0 1rem;opacity:0.95;display:none" data-lang="fr">
+        Institut Supérieur de Management et de l'Entrepreneuriat</h2>
+      <p data-lang="en"><em>Passion for Excellence</em> — We train in excellence and for excellence. Discover our
+        diverse programs and join our community of future leaders.</p>
+      <p data-lang="fr" style="display:none"><em>Passion pour l'Excellence</em> — Nous formons dans l'excellence et pour
+        l'excellence. Découvrez nos programmes variés et rejoignez notre communauté de futurs leaders.</p>
+
       <picture>
         <source type="image/avif" srcset="assets/images/logo-ime-p.avif" />
         <source type="image/webp" srcset="assets/images/logo-ime-p.webp" />
-        <img src="assets/images/logo-ime-p.png" alt="IME School" class="img-hero" loading="lazy" style="margin-top:1rem">
+        <img src="assets/images/logo-ime-p.png" alt="IME School" class="img-hero" loading="lazy"
+          style="margin-top:1rem">
       </picture>
       <div class="cards" style="margin-top:1.5rem">
         <div class="card">
@@ -89,7 +99,8 @@
           <h3 data-lang="en">International Partnerships</h3>
           <h3 data-lang="fr" style="display:none">Partenariats Internationaux</h3>
           <p data-lang="en">Study in France, Canada, and more with partner universities.</p>
-          <p data-lang="fr" style="display:none">Étudiez en France, au Canada et ailleurs avec nos universités partenaires.</p>
+          <p data-lang="fr" style="display:none">Étudiez en France, au Canada et ailleurs avec nos universités
+            partenaires.</p>
         </div>
         <div class="card">
           <h3 data-lang="en">Professional Growth</h3>
@@ -107,8 +118,10 @@
         <article class="section">
           <h2 data-lang="en">Our Programs</h2>
           <h2 data-lang="fr" style="display:none">Nos Programmes</h2>
-          <p data-lang="en">IME offers a wide range of programs designed to meet the needs of students and professionals:</p>
-          <p data-lang="fr" style="display:none">IME propose une large gamme de programmes conçus pour répondre aux besoins des étudiants et des professionnels:</p>
+          <p data-lang="en">IME offers a wide range of programs designed to meet the needs of students and
+            professionals:</p>
+          <p data-lang="fr" style="display:none">IME propose une large gamme de programmes conçus pour répondre aux
+            besoins des étudiants et des professionnels:</p>
           <ul>
             <li data-lang="en">Engineering (Polytech Douala)</li>
             <li data-lang="fr" style="display:none">Ingénierie (Polytech Douala)</li>
@@ -121,7 +134,8 @@
             <li data-lang="en">Executive MBA & DBA</li>
             <li data-lang="fr" style="display:none">MBA Exécutif & DBA</li>
           </ul>
-          <p><a href="admissions.html" data-lang="en">View all programs →</a><a href="admissions.html" data-lang="fr" style="display:none">Voir tous les programmes →</a></p>
+          <p><a href="admissions.html" data-lang="en">View all programs →</a><a href="admissions.html" data-lang="fr"
+              style="display:none">Voir tous les programmes →</a></p>
         </article>
 
         <!-- Removed campuses / reasons / vision / INCUBIME / certifications from homepage to keep the homepage concise.
@@ -135,26 +149,42 @@
           <div class="partners-slider" id="partners-slider">
             <div class="partners-viewport">
               <div class="partners-track">
-                  <div class="partner-slide" tabindex="0"><img src="assets/images/partners/Efrei.png" alt="EFREI Partner"></div>
-                  <div class="partner-slide" tabindex="0"><img src="assets/images/partners/Esigetel.png" alt="Esigetel Partner"></div>
-                  <div class="partner-slide" tabindex="0"><img src="assets/images/partners/Logo-GICAM-blanc.png" alt="GICAM Partner"></div>
-                  <div class="partner-slide" tabindex="0"><img src="assets/images/partners/logo-polytechnique-blanc.png" alt="Polytechnique Partner"></div>
-                  <div class="partner-slide" tabindex="0"><img src="assets/images/partners/logo-iae-metz-blanc.png" alt="IAE Metz"></div>
-                  <div class="partner-slide" tabindex="0"><img src="assets/images/partners/Logo-Secel-blanc.png" alt="SECEL"></div>
-                  <div class="partner-slide" tabindex="0"><img src="assets/images/partners/Univ-de-haute-alsace.png" alt="UHA"></div>
-                  <div class="partner-slide" tabindex="0"><img src="assets/images/partners/ESG-UQAM.png" alt="ESG UQAM"></div>
-                  <div class="partner-slide" tabindex="0"><img src="assets/images/partners/UWE-01.png" alt="UWE Bristol"></div>
-                  <div class="partner-slide" tabindex="0"><img src="assets/images/partners/Logo-blanc-Transimex-1.png" alt="Transimex"></div>
-                  <div class="partner-slide" tabindex="0"><img src="assets/images/partners/A-State_Stack_1C_White_Dark.png" alt="Arkansas State"></div>
-                  <div class="partner-slide" tabindex="0"><img src="assets/images/partners/business-science-institute-.png" alt="BSI"></div>
-                  <div class="partner-slide" tabindex="0"><img src="assets/images/partners/Logo-Premium-blanc.png" alt="Premium"></div>
-                  <div class="partner-slide" tabindex="0"><img src="assets/images/partners/Logo-MGIEVE-blanc.png" alt="MGIEVE"></div>
-                  <div class="partner-slide" tabindex="0"><img src="assets/images/partners/Sans-titre-2-1.png" alt="Partner Network"></div>
+                <div class="partner-slide" tabindex="0"><img src="assets/images/partners/Efrei.png" alt="EFREI Partner">
+                </div>
+                <div class="partner-slide" tabindex="0"><img src="assets/images/partners/Esigetel.png"
+                    alt="Esigetel Partner"></div>
+                <div class="partner-slide" tabindex="0"><img src="assets/images/partners/Logo-GICAM-blanc.png"
+                    alt="GICAM Partner"></div>
+                <div class="partner-slide" tabindex="0"><img src="assets/images/partners/logo-polytechnique-blanc.png"
+                    alt="Polytechnique Partner"></div>
+                <div class="partner-slide" tabindex="0"><img src="assets/images/partners/logo-iae-metz-blanc.png"
+                    alt="IAE Metz"></div>
+                <div class="partner-slide" tabindex="0"><img src="assets/images/partners/Logo-Secel-blanc.png"
+                    alt="SECEL"></div>
+                <div class="partner-slide" tabindex="0"><img src="assets/images/partners/Univ-de-haute-alsace.png"
+                    alt="UHA"></div>
+                <div class="partner-slide" tabindex="0"><img src="assets/images/partners/ESG-UQAM.png" alt="ESG UQAM">
+                </div>
+                <div class="partner-slide" tabindex="0"><img src="assets/images/partners/UWE-01.png" alt="UWE Bristol">
+                </div>
+                <div class="partner-slide" tabindex="0"><img src="assets/images/partners/Logo-blanc-Transimex-1.png"
+                    alt="Transimex"></div>
+                <div class="partner-slide" tabindex="0"><img
+                    src="assets/images/partners/A-State_Stack_1C_White_Dark.png" alt="Arkansas State"></div>
+                <div class="partner-slide" tabindex="0"><img
+                    src="assets/images/partners/business-science-institute-.png" alt="BSI"></div>
+                <div class="partner-slide" tabindex="0"><img src="assets/images/partners/Logo-Premium-blanc.png"
+                    alt="Premium"></div>
+                <div class="partner-slide" tabindex="0"><img src="assets/images/partners/Logo-MGIEVE-blanc.png"
+                    alt="MGIEVE"></div>
+                <div class="partner-slide" tabindex="0"><img src="assets/images/partners/Sans-titre-2-1.png"
+                    alt="Partner Network"></div>
               </div>
             </div>
             <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Partner carousel pagination"></div>
           </div>
-          <p style="text-align:center;margin-top:1rem"><a href="partners.html" data-lang="en">View all partners →</a><a href="partners.html" data-lang="fr" style="display:none">Voir tous les partenaires →</a></p>
+          <p style="text-align:center;margin-top:1rem"><a href="partners.html" data-lang="en">View all partners →</a><a
+              href="partners.html" data-lang="fr" style="display:none">Voir tous les partenaires →</a></p>
         </article>
       </div>
 
@@ -187,14 +217,16 @@
     <div class="container grid">
       <div>
         <strong data-lang="en">IME — Higher Institute of Management & Entrepreneurship</strong>
-        <strong data-lang="fr" style="display:none">IME — Institut Supérieur de Management et de l'Entrepreneuriat</strong>
+        <strong data-lang="fr" style="display:none">IME — Institut Supérieur de Management et de
+          l'Entrepreneuriat</strong>
         <p style="margin:0.5rem 0 0;font-style:italic" data-lang="en">Passion for Excellence</p>
         <p style="margin:0.5rem 0 0;font-style:italic;display:none" data-lang="fr">Passion pour l'Excellence</p>
       </div>
       <div>
         <strong data-lang="en">Resources</strong>
         <strong data-lang="fr" style="display:none">Ressources</strong>
-        <p style="margin:0.5rem 0 0"><a href="#" data-lang="en">Calendar</a><a href="#" data-lang="fr" style="display:none">Calendrier</a><br><a href="#">Facebook</a></p>
+        <p style="margin:0.5rem 0 0"><a href="#" data-lang="en">Calendar</a><a href="#" data-lang="fr"
+            style="display:none">Calendrier</a><br><a href="#">Facebook</a></p>
       </div>
       <div>
         <strong data-lang="en">Follow Us</strong>
@@ -206,4 +238,5 @@
 
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>

@@ -58,6 +58,26 @@ button {
   min-width: var(--touch-target);
 }
 
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+/* Base section wrapper for grid/flex items */
+.main-content>div {
+  min-width: 0;
+  width: 100%;
+}
+
+article,
+section {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* Header - mobile first */
 .header {
   background: linear-gradient(90deg, var(--ime-blue), var(--ime-red));
@@ -75,54 +95,60 @@ button {
 
 .header .top {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 0.75rem;
+  padding: 0.75rem 1rem;
   gap: 0.5rem;
-  flex-wrap: wrap;
+}
+
+.header-controls {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  gap: 0.5rem;
+  flex-shrink: 0;
 }
 
 .brand {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem;
   align-items: center;
   flex: 1;
   min-width: 0;
 }
 
-.brand a {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.logo {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  background: var(--ime-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--ime-blue);
-  font-weight: 700;
-  font-size: 0.9rem;
+.brand-logo {
+  height: 48px;
+  width: auto;
+  border-radius: 4px;
   flex-shrink: 0;
 }
 
-.brand>div {
+.brand-text {
+  display: flex;
+  flex-direction: column;
   min-width: 0;
 }
 
-.brand>div>div {
-  font-size: 0.7rem;
+.brand-name {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.brand-subtitle {
+  font-size: 0.65rem;
   line-height: 1.2;
+  opacity: 0.9;
   word-break: break-word;
 }
 
-.brand>div>div:first-child {
-  font-weight: 700;
-  font-size: 0.9rem;
+.brand-slogan {
+  font-size: 0.6rem;
+  line-height: 1.2;
+  opacity: 0.8;
+  font-style: italic;
+  margin-top: 0.1rem;
 }
 
 .nav {
@@ -259,9 +285,10 @@ a:focus {
 /* Main content layout - mobile first */
 .main-content {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1rem;
   padding: 1rem 0;
+  width: 100%;
 }
 
 .section {
@@ -269,6 +296,7 @@ a:focus {
   padding: 0.75rem;
   border-radius: 10px;
   min-width: 0;
+  width: 100%;
 }
 
 .section h2 {
@@ -513,28 +541,29 @@ a:focus {
 
 .lang-btn {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   color: var(--ime-white);
-  padding: 0.3rem 0.5rem;
-  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 0.8rem;
-  font-weight: 600;
-  min-width: var(--touch-target);
-  min-height: var(--touch-target);
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: all 0.2s;
+  min-width: 36px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s;
 }
 
 .lang-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .lang-btn--active {
   background: var(--ime-white);
   color: var(--ime-blue);
+  border-color: var(--ime-white);
 }
 
 /* Skip link */
@@ -805,16 +834,31 @@ tr:last-child td {
     max-height: 72px;
   }
 
-  .carousel-dots {
-    gap: 0.5rem;
-    margin-top: 1rem;
+  .header .top {
+    align-items: center;
+    padding: 1rem;
   }
 
-  .carousel-dot {
-    width: 8px !important;
-    height: 8px !important;
-    min-width: 8px !important;
-    min-height: 8px !important;
+  .header-controls {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  /* Small mobile specific tweaks */
+  @media (max-width: 480px) {
+    .carousel-dots {
+      gap: 4px;
+      margin-top: 8px;
+    }
+
+    .carousel-dot {
+      width: 6px !important;
+      height: 6px !important;
+      min-width: 6px !important;
+      min-height: 6px !important;
+      margin: 0 2px !important;
+    }
   }
 
   .carousel-dot.active {

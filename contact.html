@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,6 +13,7 @@
   {"@context":"https://schema.org","@type":"ContactPage","name":"Contact — IME School","url":"https://www.ime-school.com/contact"}
   </script>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="header">
@@ -19,25 +21,28 @@
       <div class="brand">
         <a href="index.html" aria-label="IME Home">
           <picture>
-            <source type="image/avif" srcset="assets/images/logo-ime-p.avif" />
-            <source type="image/webp" srcset="assets/images/logo-ime-p.webp" />
-            <img src="assets/images/logo-ime-p.png" alt="IME Logo" style="height:70px;width:auto;margin-right:1rem">
+            <source type="image/avif" srcset="assets/images/logo-ime-p.avif">
+            <source type="image/webp" srcset="assets/images/logo-ime-p.webp">
+            <img src="assets/images/logo-ime-p.png" alt="IME Logo" class="brand-logo">
           </picture>
         </a>
-        <div>
-          <div style="font-weight:700;font-size:1.1rem">IME</div>
-          <div style="font-size:0.75rem;opacity:0.95;line-height:1.2" data-lang="en">Higher Institute of Management & Entrepreneurship</div>
-          <div style="font-size:0.75rem;opacity:0.95;line-height:1.2;display:none" data-lang="fr">Institut Supérieur de Management et de l'Entrepreneuriat</div>
-          <div style="font-size:0.75rem;opacity:0.9;font-style:italic;margin-top:0.25rem" data-lang="en">Passion for Excellence</div>
-          <div style="font-size:0.75rem;opacity:0.9;font-style:italic;margin-top:0.25rem;display:none" data-lang="fr">Passion pour l'Excellence</div>
+        <div class="brand-text">
+          <div class="brand-name">IME</div>
+          <div class="brand-subtitle" data-lang="en">Higher Institute of Management & Entrepreneurship</div>
+          <div class="brand-subtitle" data-lang="fr" style="display:none">Institut Supérieur de Management et de
+            l'Entrepreneuriat</div>
+          <div class="brand-slogan" data-lang="en">Passion for Excellence</div>
+          <div class="brand-slogan" data-lang="fr" style="display:none">Passion pour l'Excellence</div>
         </div>
       </div>
       <nav aria-label="Main navigation">
-        <div class="lang-switcher">
-          <button class="lang-btn" data-lang-btn="en">EN</button>
-          <button class="lang-btn lang-btn--active" data-lang-btn="fr">FR</button>
-        </div>
+        <div class="header-controls">
+          <div class="lang-switcher">
+            <button class="lang-btn" data-lang-btn="en">EN</button>
+            <button class="lang-btn lang-btn--active" data-lang-btn="fr">FR</button>
+          </div>
           <button id="nav-toggle" class="hamburger" aria-expanded="false" aria-controls="nav">☰</button>
+        </div>
         <div id="nav" class="nav" role="menu">
           <a href="index.html" data-lang="en">Home</a>
           <a href="index.html" data-lang="fr" style="display:none">Accueil</a>
@@ -47,10 +52,10 @@
           <a href="admissions.html" data-lang="fr" style="display:none">Admission</a>
           <a href="news.html" data-lang="en">News</a>
           <a href="news.html" data-lang="fr" style="display:none">Actualités</a>
-            <a href="partners.html" data-lang="en">Partners</a>
-            <a href="partners.html" data-lang="fr" style="display:none">Partenaires</a>
-            <a href="contact.html" data-lang="en">Contact</a>
-            <a href="contact.html" data-lang="fr" style="display:none">Contact</a>
+          <a href="partners.html" data-lang="en">Partners</a>
+          <a href="partners.html" data-lang="fr" style="display:none">Partenaires</a>
+          <a href="contact.html" data-lang="en">Contact</a>
+          <a href="contact.html" data-lang="fr" style="display:none">Contact</a>
         </div>
       </nav>
     </div>
@@ -80,14 +85,16 @@
     <div class="container grid">
       <div>
         <strong data-lang="en">IME — Higher Institute of Management & Entrepreneurship</strong>
-        <strong data-lang="fr" style="display:none">IME — Institut Supérieur de Management et de l'Entrepreneuriat</strong>
+        <strong data-lang="fr" style="display:none">IME — Institut Supérieur de Management et de
+          l'Entrepreneuriat</strong>
         <p style="margin:0.5rem 0 0;font-style:italic" data-lang="en">Passion for Excellence</p>
         <p style="margin:0.5rem 0 0;font-style:italic;display:none" data-lang="fr">Passion pour l'Excellence</p>
       </div>
       <div>
         <strong data-lang="en">Resources</strong>
         <strong data-lang="fr" style="display:none">Ressources</strong>
-        <p style="margin:0.5rem 0 0"><a href="#" data-lang="en">Calendar</a><a href="#" data-lang="fr" style="display:none">Calendrier</a><br><a href="#">Facebook</a></p>
+        <p style="margin:0.5rem 0 0"><a href="#" data-lang="en">Calendar</a><a href="#" data-lang="fr"
+            style="display:none">Calendrier</a><br><a href="#">Facebook</a></p>
       </div>
       <div>
         <strong data-lang="en">Follow Us</strong>
@@ -99,4 +106,5 @@
 
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>

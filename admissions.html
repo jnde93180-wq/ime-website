@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Admissions — IME School</title>
-  <meta name="description" content="Admissions at IME School — programs, application process, and admission requirements.">
+  <meta name="description"
+    content="Admissions at IME School — programs, application process, and admission requirements.">
   <meta name="theme-color" content="#0b57a4">
   <link rel="icon" href="assets/images/logo-ime-p.png" type="image/png">
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -12,6 +14,7 @@
   {"@context":"https://schema.org","@type":"EducationOrganization","name":"IME School","url":"https://www.ime-school.com"}
   </script>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="header">
@@ -19,25 +22,28 @@
       <div class="brand">
         <a href="index.html" aria-label="IME Home">
           <picture>
-            <source type="image/avif" srcset="assets/images/logo-ime-p.avif" />
-            <source type="image/webp" srcset="assets/images/logo-ime-p.webp" />
-            <img src="assets/images/logo-ime-p.png" alt="IME Logo" style="height:70px;width:auto;margin-right:1rem">
+            <source type="image/avif" srcset="assets/images/logo-ime-p.avif">
+            <source type="image/webp" srcset="assets/images/logo-ime-p.webp">
+            <img src="assets/images/logo-ime-p.png" alt="IME Logo" class="brand-logo">
           </picture>
         </a>
-        <div>
-          <div style="font-weight:700;font-size:1.1rem">IME</div>
-          <div style="font-size:0.75rem;opacity:0.95;line-height:1.2" data-lang="en">Higher Institute of Management & Entrepreneurship</div>
-          <div style="font-size:0.75rem;opacity:0.95;line-height:1.2;display:none" data-lang="fr">Institut Supérieur de Management et de l'Entrepreneuriat</div>
-          <div style="font-size:0.75rem;opacity:0.9;font-style:italic;margin-top:0.25rem" data-lang="en">Passion for Excellence</div>
-          <div style="font-size:0.75rem;opacity:0.9;font-style:italic;margin-top:0.25rem;display:none" data-lang="fr">Passion pour l'Excellence</div>
+        <div class="brand-text">
+          <div class="brand-name">IME</div>
+          <div class="brand-subtitle" data-lang="en">Higher Institute of Management & Entrepreneurship</div>
+          <div class="brand-subtitle" data-lang="fr" style="display:none">Institut Supérieur de Management et de
+            l'Entrepreneuriat</div>
+          <div class="brand-slogan" data-lang="en">Passion for Excellence</div>
+          <div class="brand-slogan" data-lang="fr" style="display:none">Passion pour l'Excellence</div>
         </div>
       </div>
       <nav aria-label="Main navigation">
-        <div class="lang-switcher">
-          <button class="lang-btn" data-lang-btn="en">EN</button>
-          <button class="lang-btn lang-btn--active" data-lang-btn="fr">FR</button>
+        <div class="header-controls">
+          <div class="lang-switcher">
+            <button class="lang-btn" data-lang-btn="en">EN</button>
+            <button class="lang-btn lang-btn--active" data-lang-btn="fr">FR</button>
+          </div>
+          <button id="nav-toggle" class="hamburger" aria-expanded="false" aria-controls="nav">☰</button>
         </div>
-        <button id="nav-toggle" class="hamburger" aria-expanded="false" aria-controls="nav">☰</button>
         <div id="nav" class="nav" role="menu">
           <a href="index.html" data-lang="en">Home</a>
           <a href="index.html" data-lang="fr" style="display:none">Accueil</a>
@@ -60,8 +66,10 @@
     <article class="section">
       <h1 data-lang="en">Admissions</h1>
       <h1 data-lang="fr" style="display:none">Admission</h1>
-      <p data-lang="en">Apply to IME and join our community of excellent students and professionals. We welcome applications for all our programs.</p>
-      <p data-lang="fr" style="display:none">Postulez à IME et rejoignez notre communauté d'étudiants et de professionnels excellents. Nous accueillons les candidatures pour tous nos programmes.</p>
+      <p data-lang="en">Apply to IME and join our community of excellent students and professionals. We welcome
+        applications for all our programs.</p>
+      <p data-lang="fr" style="display:none">Postulez à IME et rejoignez notre communauté d'étudiants et de
+        professionnels excellents. Nous accueillons les candidatures pour tous nos programmes.</p>
 
       <h2 data-lang="en">National Programs</h2>
       <h2 data-lang="fr" style="display:none">Programmes Nationaux</h2>
@@ -167,7 +175,7 @@
 
       <h2 data-lang="en">Popular Programs</h2>
       <h2 data-lang="fr" style="display:none">Programmes Populaires</h2>
-      
+
       <h3 data-lang="en">Engineering (Polytech Douala)</h3>
       <h3 data-lang="fr" style="display:none">Ingénierie (Polytech Douala)</h3>
       <ul>
@@ -181,30 +189,34 @@
 
       <h2 data-lang="en" style="margin-top:2rem">Application Form</h2>
       <h2 data-lang="fr" style="display:none;margin-top:2rem">Formulaire de Demande d'Admission</h2>
-      
+
       <form action="#" method="post" style="display:grid;gap:1rem;max-width:600px;margin-top:1rem">
         <div>
           <label for="name" data-lang="en">Full Name *</label>
           <label for="name" data-lang="fr" style="display:none">Nom Complet *</label>
-          <input id="name" name="name" required style="padding:.75rem;border:1px solid #d1d5db;border-radius:6px;width:100%">
+          <input id="name" name="name" required
+            style="padding:.75rem;border:1px solid #d1d5db;border-radius:6px;width:100%">
         </div>
 
         <div>
           <label for="email" data-lang="en">Email *</label>
           <label for="email" data-lang="fr" style="display:none">Email *</label>
-          <input id="email" name="email" type="email" required style="padding:.75rem;border:1px solid #d1d5db;border-radius:6px;width:100%">
+          <input id="email" name="email" type="email" required
+            style="padding:.75rem;border:1px solid #d1d5db;border-radius:6px;width:100%">
         </div>
 
         <div>
           <label for="phone" data-lang="en">Phone Number *</label>
           <label for="phone" data-lang="fr" style="display:none">Numéro de Téléphone *</label>
-          <input id="phone" name="phone" type="tel" required style="padding:.75rem;border:1px solid #d1d5db;border-radius:6px;width:100%">
+          <input id="phone" name="phone" type="tel" required
+            style="padding:.75rem;border:1px solid #d1d5db;border-radius:6px;width:100%">
         </div>
 
         <div>
           <label for="program" data-lang="en">Program *</label>
           <label for="program" data-lang="fr" style="display:none">Programme *</label>
-          <select id="program" name="program" required style="padding:.75rem;border:1px solid #d1d5db;border-radius:6px;width:100%">
+          <select id="program" name="program" required
+            style="padding:.75rem;border:1px solid #d1d5db;border-radius:6px;width:100%">
             <option data-lang="en">Select a program</option>
             <option data-lang="fr" style="display:none">Sélectionnez un programme</option>
             <option data-lang="en">Engineering (Polytech Douala)</option>
@@ -223,15 +235,18 @@
         <div>
           <label for="message" data-lang="en">Message</label>
           <label for="message" data-lang="fr" style="display:none">Message</label>
-          <textarea id="message" name="message" rows="5" style="padding:.75rem;border:1px solid #d1d5db;border-radius:6px;width:100%"></textarea>
+          <textarea id="message" name="message" rows="5"
+            style="padding:.75rem;border:1px solid #d1d5db;border-radius:6px;width:100%"></textarea>
         </div>
 
         <button class="cta" type="submit" data-lang="en">Submit Application</button>
         <button class="cta" type="submit" data-lang="fr" style="display:none">Soumettre la Candidature</button>
       </form>
 
-      <p style="margin-top:2rem;font-size:0.95rem" data-lang="en"><strong>Contact Admissions:</strong> infos@ime-school.com | +237 683 55 78 34</p>
-      <p style="margin-top:2rem;font-size:0.95rem;display:none" data-lang="fr"><strong>Contacter l'Admission:</strong> infos@ime-school.com | +237 683 55 78 34</p>
+      <p style="margin-top:2rem;font-size:0.95rem" data-lang="en"><strong>Contact Admissions:</strong>
+        infos@ime-school.com | +237 683 55 78 34</p>
+      <p style="margin-top:2rem;font-size:0.95rem;display:none" data-lang="fr"><strong>Contacter l'Admission:</strong>
+        infos@ime-school.com | +237 683 55 78 34</p>
     </article>
   </main>
 
@@ -239,14 +254,16 @@
     <div class="container grid">
       <div>
         <strong data-lang="en">IME — Higher Institute of Management & Entrepreneurship</strong>
-        <strong data-lang="fr" style="display:none">IME — Institut Supérieur de Management et de l'Entrepreneuriat</strong>
+        <strong data-lang="fr" style="display:none">IME — Institut Supérieur de Management et de
+          l'Entrepreneuriat</strong>
         <p style="margin:0.5rem 0 0;font-style:italic" data-lang="en">Passion for Excellence</p>
         <p style="margin:0.5rem 0 0;font-style:italic;display:none" data-lang="fr">Passion pour l'Excellence</p>
       </div>
       <div>
         <strong data-lang="en">Resources</strong>
         <strong data-lang="fr" style="display:none">Ressources</strong>
-        <p style="margin:0.5rem 0 0"><a href="#" data-lang="en">Calendar</a><a href="#" data-lang="fr" style="display:none">Calendrier</a><br><a href="#">Facebook</a></p>
+        <p style="margin:0.5rem 0 0"><a href="#" data-lang="en">Calendar</a><a href="#" data-lang="fr"
+            style="display:none">Calendrier</a><br><a href="#">Facebook</a></p>
       </div>
       <div>
         <strong data-lang="en">Follow Us</strong>
@@ -258,4 +275,5 @@
 
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>
