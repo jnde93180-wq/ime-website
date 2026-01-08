@@ -99,9 +99,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const btnNext = document.getElementById('partners-next');
     const btnPrev = document.getElementById('partners-prev');
     if(!track || !viewport) return;
-    const slides = Array.from(track.children);
+    let slides = Array.from(track.children);
     const visible = 1;
-    let index = 0;
+    const originalCount = slides.length;
+    
+    // Clone first and last slides for smooth infinite loop
+    if(originalCount > 1){
+      const firstClone = slides[0].cloneNode(true);
+      const lastClone = slides[originalCount - 1].cloneNode(true);
+      track.appendChild(firstClone);
+      track.insertBefore(lastClone, slides[0]);
+      slides = Array.from(track.children);
+    }
+    
+    let index = originalCount > 1 ? 1 : 0; // Start at the real first slide (after clone)
     let timer = null;
 
     function getGap(){
@@ -109,26 +120,47 @@ document.addEventListener('DOMContentLoaded', ()=>{
       return parseFloat(style.gap) || 0;
     }
 
-    function slideTo(i){
+    function slideTo(i, immediate = false){
       const gap = getGap();
       const slideWidth = slides[0].getBoundingClientRect().width + gap;
-      track.style.transform = `translateX(-${i * slideWidth}px)`;
+      if(immediate){
+        track.style.transition = 'none';
+        track.style.transform = `translateX(-${i * slideWidth}px)`;
+        // Force reflow to ensure transition 'none' is applied
+        void track.offsetHeight;
+        track.style.transition = '';
+      } else {
+        track.style.transition = '';
+        track.style.transform = `translateX(-${i * slideWidth}px)`;
+      }
     }
 
     function nextGroup(){
-      const maxIndex = Math.max(0, slides.length - visible);
       index += visible;
-      if(index > maxIndex) index = 0;
       slideTo(index);
       updateDots();
+      
+      // If we've reached the clone of the first slide, jump back seamlessly
+      if(originalCount > 1 && index >= slides.length - (originalCount - 1)){
+        setTimeout(() => {
+          index = 1; // Jump to real first slide
+          slideTo(index, true);
+        }, 420); // Wait for transition to complete
+      }
     }
 
     function prevGroup(){
-      const maxIndex = Math.max(0, slides.length - visible);
       index -= visible;
-      if(index < 0) index = maxIndex;
       slideTo(index);
       updateDots();
+      
+      // If we've reached the clone of the last slide, jump back seamlessly
+      if(originalCount > 1 && index < 1){
+        setTimeout(() => {
+          index = originalCount; // Jump to real last slide
+          slideTo(index, true);
+        }, 420); // Wait for transition to complete
+      }
     }
 
     function startAuto(){
@@ -213,21 +245,33 @@ document.addEventListener('DOMContentLoaded', ()=>{
     function updateDots(){
       if(!dotsContainer) return;
       const dots = Array.from(dotsContainer.querySelectorAll('.carousel-dot'));
+      // Map current index to real slide index (accounting for clones)
+      let realIndex = index;
+      if(originalCount > 1){
+        if(index === 0) realIndex = originalCount - 1; // Clone of last
+        else if(index >= originalCount + 1) realIndex = 0; // Clone of first
+        else realIndex = index - 1; // Real slides are offset by 1
+      }
       dots.forEach((dot, i) => {
-        if(i === index) dot.classList.add('active');
+        if(i === realIndex) dot.classList.add('active');
         else dot.classList.remove('active');
       });
     }
-    // Create dots (if container exists)
+    // Create dots (if container exists) — only for original slides, not clones
     if(dotsContainer){
-      slides.forEach((_, i) => {
+      for(let i = 0; i < originalCount; i++){
         const dot = document.createElement('button');
         dot.className = 'carousel-dot';
         dot.setAttribute('role', 'tab');
         dot.setAttribute('aria-label', `Partner ${i + 1}`);
-        dot.addEventListener('click', () => { index = i; slideTo(index); startAuto(); updateDots(); });
+        dot.addEventListener('click', () => { 
+          index = originalCount > 1 ? i + 1 : i; // Account for clone offset
+          slideTo(index);
+          startAuto();
+          updateDots();
+        });
         dotsContainer.appendChild(dot);
-      });
+      }
     }
 
     // initial layout
