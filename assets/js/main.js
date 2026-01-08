@@ -67,21 +67,76 @@ document.addEventListener('DOMContentLoaded', ()=>{
     el.addEventListener('blur', ()=> el.classList.remove('is-focused'));
   });
 
-  // Initialize partners carousel (simple rotate)
+  // Initialize partners carousel (track/viewport approach)
   function initPartnersCarousel(){
-    const container = document.querySelector('#partners-slider .partners-carousel');
-    if(!container) return;
-    // move first child to end every 3s
-    setInterval(()=>{
-      if(container.children.length <= 4) {
-        // rotate only if more than visible
-        const first = container.firstElementChild;
-        if(first) container.appendChild(first);
-      } else {
-        const first = container.firstElementChild;
-        if(first) container.appendChild(first);
-      }
-    }, 3000);
+    const slider = document.getElementById('partners-slider');
+    if(!slider) return;
+    const track = slider.querySelector('.partners-track');
+    const viewport = slider.querySelector('.partners-viewport');
+    const btnNext = document.getElementById('partners-next');
+    const btnPrev = document.getElementById('partners-prev');
+    if(!track || !viewport) return;
+    const slides = Array.from(track.children);
+    const visible = 3;
+    let index = 0;
+    let timer = null;
+
+    function getGap(){
+      const style = getComputedStyle(track);
+      return parseFloat(style.gap) || 0;
+    }
+
+    function slideTo(i){
+      const gap = getGap();
+      const slideWidth = slides[0].getBoundingClientRect().width + gap;
+      track.style.transform = `translateX(-${i * slideWidth}px)`;
+    }
+
+    function nextGroup(){
+      const maxIndex = Math.max(0, slides.length - visible);
+      index += visible;
+      if(index > maxIndex) index = 0;
+      slideTo(index);
+    }
+
+    function prevGroup(){
+      const maxIndex = Math.max(0, slides.length - visible);
+      index -= visible;
+      if(index < 0) index = maxIndex;
+      slideTo(index);
+    }
+
+    function startAuto(){
+      stopAuto();
+      timer = setInterval(nextGroup, 3000);
+    }
+
+    function stopAuto(){
+      if(timer) { clearInterval(timer); timer = null; }
+    }
+
+    // Attach controls
+    if(btnNext) btnNext.addEventListener('click', ()=>{ nextGroup(); startAuto(); });
+    if(btnPrev) btnPrev.addEventListener('click', ()=>{ prevGroup(); startAuto(); });
+
+    // Pause on hover / focus
+    slider.addEventListener('mouseenter', stopAuto);
+    slider.addEventListener('mouseleave', startAuto);
+    slider.addEventListener('focusin', stopAuto);
+    slider.addEventListener('focusout', startAuto);
+
+    // keyboard navigation for controls
+    slider.addEventListener('keydown', (e)=>{
+      if(e.key === 'ArrowRight') { nextGroup(); startAuto(); }
+      if(e.key === 'ArrowLeft') { prevGroup(); startAuto(); }
+    });
+
+    // resize handling
+    window.addEventListener('resize', ()=> slideTo(index));
+
+    // initial layout
+    slideTo(index);
+    startAuto();
   }
   initPartnersCarousel();
 
