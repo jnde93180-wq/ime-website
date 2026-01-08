@@ -16,7 +16,7 @@ html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,Helvetica,Arial
 .nav{display:flex;gap:1rem}
 .nav a{color:var(--ime-white);text-decoration:none;padding:0.5rem 0.75rem;border-radius:6px}
 .nav a:hover{background:rgba(255,255,255,0.12)}
-.nav--open{display:flex;flex-direction:column;position:absolute;top:72px;right:1rem;background:linear-gradient(180deg,var(--ime-blue),var(--ime-red));padding:0.75rem;border-radius:8px}
+.nav--open{display:flex;flex-direction:column;position:absolute;top:72px;right:1rem;background:linear-gradient(180deg,var(--ime-blue),var(--ime-red));padding:0.75rem;border-radius:8px;z-index:1200}
 .hamburger{display:none;background:transparent;border:0;color:var(--ime-white);font-size:1.25rem}
 
 .hero{padding:3.5rem 1rem;color:var(--ime-white);text-align:left}
@@ -49,12 +49,13 @@ html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,Helvetica,Arial
 /* Partners Slider */
 .partners-slider{background:var(--ime-white);padding:1.5rem;border-radius:10px;margin-top:1rem}
 .partners-carousel{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;align-items:center;justify-items:center}
-.partner-logo{max-width:100%;height:80px;object-fit:contain;opacity:0.85}
-.partner-logo:hover{opacity:1}
+.partners-carousel .partner-slide{background:#f3f7fb;padding:0.5rem;border-radius:8px;display:flex;align-items:center;justify-content:center;height:100px}
+.partners-carousel .partner-slide img{max-width:100%;max-height:80px;object-fit:contain;opacity:0.95}
+.partners-carousel .partner-slide img:hover{opacity:1}
 
 /* Partners Grid Page */
 .partners-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1rem}
-.partner-item{background:var(--ime-white);padding:1.5rem;border-radius:10px;text-align:center;box-shadow:0 2px 8px rgba(2,6,23,0.08);transition:transform 0.3s,box-shadow 0.3s}
+.partner-item{background:#f8fbff;padding:1.5rem;border-radius:10px;text-align:center;box-shadow:0 2px 8px rgba(2,6,23,0.06);transition:transform 0.3s,box-shadow 0.3s}
 .partner-item:hover{transform:translateY(-4px);box-shadow:0 6px 18px rgba(2,6,23,0.12)}
 .partner-item img{max-height:100px;max-width:100%;object-fit:contain;margin-bottom:1rem}
 .partner-item p{font-weight:600;color:var(--ime-blue);margin:0}
@@ -78,6 +79,7 @@ html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,Helvetica,Arial
   .reasons-grid{grid-template-columns:1fr}
   .partners-carousel{grid-template-columns:1fr}
   .partners-grid{grid-template-columns:1fr}
+  .nav--open{left:0;right:0;top:56px;width:calc(100% - 2rem);margin:0 1rem;padding:1rem}
 }
 
 .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}

@@ -66,4 +66,39 @@ document.addEventListener('DOMContentLoaded', ()=>{
     el.addEventListener('focus', ()=> el.classList.add('is-focused'));
     el.addEventListener('blur', ()=> el.classList.remove('is-focused'));
   });
+
+  // Initialize partners carousel (simple rotate)
+  function initPartnersCarousel(){
+    const container = document.querySelector('#partners-slider .partners-carousel');
+    if(!container) return;
+    // move first child to end every 3s
+    setInterval(()=>{
+      if(container.children.length <= 4) {
+        // rotate only if more than visible
+        const first = container.firstElementChild;
+        if(first) container.appendChild(first);
+      } else {
+        const first = container.firstElementChild;
+        if(first) container.appendChild(first);
+      }
+    }, 3000);
+  }
+  initPartnersCarousel();
+
+  // Ensure nav aria-hidden when closed (improve mobile behaviour)
+  function syncNavAria(){
+    const nav = document.getElementById('nav');
+    const toggle = document.getElementById('nav-toggle');
+    if(!nav || !toggle) return;
+    const opened = nav.classList.contains('nav--open');
+    nav.setAttribute('aria-hidden', String(!opened));
+  }
+  // observe changes on nav class
+  const navEl = document.getElementById('nav');
+  if(navEl){
+    const mo = new MutationObserver(syncNavAria);
+    mo.observe(navEl, {attributes:true, attributeFilter:['class']});
+    // initial sync
+    syncNavAria();
+  }
 });
