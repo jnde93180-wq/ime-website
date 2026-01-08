@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       if(timer) { clearInterval(timer); timer = null; }
     }
 
-    // Attach controls
+    // Attach controls (if present) — user requested removal in some cases
     if(btnNext) btnNext.addEventListener('click', ()=>{ nextGroup(); startAuto(); });
     if(btnPrev) btnPrev.addEventListener('click', ()=>{ prevGroup(); startAuto(); });
 
@@ -133,6 +133,73 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     // resize handling
     window.addEventListener('resize', ()=> slideTo(index));
+
+    // detect white/transparent logos and invert them for visibility
+    function shouldInvertImage(img){
+      return new Promise((resolve)=>{
+        try{
+          const w = 8, h = 8;
+          const c = document.createElement('canvas'); c.width = w; c.height = h;
+          const ctx = c.getContext('2d');
+          ctx.drawImage(img, 0, 0, w, h);
+          const d = ctx.getImageData(0,0,w,h).data;
+          let total = 0, count = 0;
+          for(let i=0;i<d.length;i+=4){
+            const r = d[i], g = d[i+1], b = d[i+2], a = d[i+3];
+            if(a < 30) continue; // ignore mostly transparent pixels
+            const l = 0.2126*r + 0.7152*g + 0.0722*b;
+            total += l; count++;
+          }
+          if(count === 0) return resolve(false);
+          const avg = total / count;
+          resolve(avg > 200); // very light images -> invert
+        }catch(e){ resolve(false); }
+      });
+    }
+
+    slides.forEach(slide=>{
+      const img = slide.querySelector('img');
+      if(!img) return;
+      const check = ()=> shouldInvertImage(img).then(inv=>{ if(inv) img.classList.add('invert'); });
+      if(img.complete) check(); else img.addEventListener('load', check);
+    });
+
+    // Touch / drag support
+    let isDown = false, startX = 0, dx = 0;
+    const trackStyle = track.style;
+    function getSlideWidth(){ const gap = getGap(); return slides[0].getBoundingClientRect().width + gap; }
+
+    function pointerDown(e){
+      isDown = true; startX = (e.touches ? e.touches[0].clientX : e.clientX); dx = 0;
+      trackStyle.transition = 'none';
+      stopAuto();
+    }
+    function pointerMove(e){
+      if(!isDown) return;
+      const x = (e.touches ? e.touches[0].clientX : e.clientX);
+      dx = x - startX;
+      const base = - index * getSlideWidth();
+      trackStyle.transform = `translateX(${base + dx}px)`;
+    }
+    function pointerUp(e){
+      if(!isDown) return; isDown = false;
+      trackStyle.transition = '';
+      const threshold = Math.min(60, getSlideWidth() * 0.25);
+      if(Math.abs(dx) > threshold){
+        if(dx < 0) nextGroup(); else prevGroup();
+      } else {
+        slideTo(index);
+      }
+      startAuto();
+    }
+
+    // Pointer / touch events
+    track.addEventListener('pointerdown', pointerDown, {passive:true});
+    window.addEventListener('pointermove', pointerMove, {passive:true});
+    window.addEventListener('pointerup', pointerUp);
+    track.addEventListener('touchstart', pointerDown, {passive:true});
+    track.addEventListener('touchmove', pointerMove, {passive:true});
+    track.addEventListener('touchend', pointerUp);
 
     // initial layout
     slideTo(index);
