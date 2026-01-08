@@ -42,6 +42,23 @@ html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,Helvetica,Arial
 .footer .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .footer a{color:rgba(255,255,255,0.85);text-decoration:none}
 
+/* Reasons Grid */
+.reasons-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}
+.reason-card{background:rgba(11,87,164,0.08);padding:1rem;border-radius:8px;border-left:4px solid var(--ime-blue);font-size:0.95rem;line-height:1.5}
+
+/* Partners Slider */
+.partners-slider{background:var(--ime-white);padding:1.5rem;border-radius:10px;margin-top:1rem}
+.partners-carousel{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;align-items:center;justify-items:center}
+.partner-logo{max-width:100%;height:80px;object-fit:contain;opacity:0.85}
+.partner-logo:hover{opacity:1}
+
+/* Partners Grid Page */
+.partners-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1rem}
+.partner-item{background:var(--ime-white);padding:1.5rem;border-radius:10px;text-align:center;box-shadow:0 2px 8px rgba(2,6,23,0.08);transition:transform 0.3s,box-shadow 0.3s}
+.partner-item:hover{transform:translateY(-4px);box-shadow:0 6px 18px rgba(2,6,23,0.12)}
+.partner-item img{max-height:100px;max-width:100%;object-fit:contain;margin-bottom:1rem}
+.partner-item p{font-weight:600;color:var(--ime-blue);margin:0}
+
 /* Utility for images */
 .img-hero{width:100%;height:auto;border-radius:10px;display:block}
 
@@ -49,12 +66,18 @@ html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,Helvetica,Arial
 @media (max-width:900px){
   .cards{grid-template-columns:repeat(2,1fr)}
   .main-content{grid-template-columns:1fr}
+  .reasons-grid{grid-template-columns:1fr}
+  .partners-carousel{grid-template-columns:repeat(2,1fr)}
+  .partners-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:680px){
   .nav{display:none}
   .hamburger{display:inline-block}
   .cards{grid-template-columns:1fr}
   .hero{padding:2rem 1rem}
+  .reasons-grid{grid-template-columns:1fr}
+  .partners-carousel{grid-template-columns:1fr}
+  .partners-grid{grid-template-columns:1fr}
 }
 
 .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
