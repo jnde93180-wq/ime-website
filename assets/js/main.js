@@ -67,6 +67,29 @@ document.addEventListener('DOMContentLoaded', ()=>{
     el.addEventListener('blur', ()=> el.classList.remove('is-focused'));
   });
 
+  // Utility: detect mostly-white images that need inversion
+  function shouldInvertImage(img){
+    return new Promise((resolve)=>{
+      try{
+        const w = 8, h = 8;
+        const c = document.createElement('canvas'); c.width = w; c.height = h;
+        const ctx = c.getContext('2d');
+        ctx.drawImage(img, 0, 0, w, h);
+        const d = ctx.getImageData(0,0,w,h).data;
+        let total = 0, count = 0;
+        for(let i=0;i<d.length;i+=4){
+          const r = d[i], g = d[i+1], b = d[i+2], a = d[i+3];
+          if(a < 30) continue; // ignore mostly transparent pixels
+          const l = 0.2126*r + 0.7152*g + 0.0722*b;
+          total += l; count++;
+        }
+        if(count === 0) return resolve(false);
+        const avg = total / count;
+        resolve(avg > 200); // very light images -> invert
+      }catch(e){ resolve(false); }
+    });
+  }
+
   // Initialize partners carousel (track/viewport approach)
   function initPartnersCarousel(){
     const slider = document.getElementById('partners-slider');
@@ -77,7 +100,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const btnPrev = document.getElementById('partners-prev');
     if(!track || !viewport) return;
     const slides = Array.from(track.children);
-    const visible = 3;
+    const visible = 1;
     let index = 0;
     let timer = null;
 
@@ -134,29 +157,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     // resize handling
     window.addEventListener('resize', ()=> slideTo(index));
 
-    // detect white/transparent logos and invert them for visibility
-    function shouldInvertImage(img){
-      return new Promise((resolve)=>{
-        try{
-          const w = 8, h = 8;
-          const c = document.createElement('canvas'); c.width = w; c.height = h;
-          const ctx = c.getContext('2d');
-          ctx.drawImage(img, 0, 0, w, h);
-          const d = ctx.getImageData(0,0,w,h).data;
-          let total = 0, count = 0;
-          for(let i=0;i<d.length;i+=4){
-            const r = d[i], g = d[i+1], b = d[i+2], a = d[i+3];
-            if(a < 30) continue; // ignore mostly transparent pixels
-            const l = 0.2126*r + 0.7152*g + 0.0722*b;
-            total += l; count++;
-          }
-          if(count === 0) return resolve(false);
-          const avg = total / count;
-          resolve(avg > 200); // very light images -> invert
-        }catch(e){ resolve(false); }
-      });
-    }
-
     slides.forEach(slide=>{
       const img = slide.querySelector('img');
       if(!img) return;
@@ -206,6 +206,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
     startAuto();
   }
   initPartnersCarousel();
+
+  // Auto-invert partner images on the partners page grid as well
+  (function invertPartnersGrid(){
+    const imgs = Array.from(document.querySelectorAll('.partners-grid img'));
+    imgs.forEach(img=>{
+      const check = ()=> shouldInvertImage(img).then(inv=>{ if(inv) img.classList.add('invert'); });
+      if(img.complete) check(); else img.addEventListener('load', check);
+      // ensure container is focusable
+      const container = img.closest('.partner-item');
+      if(container && !container.hasAttribute('tabindex')) container.setAttribute('tabindex','0');
+    });
+  })();
 
   // Ensure nav aria-hidden when closed (improve mobile behaviour)
   function syncNavAria(){

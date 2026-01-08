@@ -50,13 +50,12 @@ html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,Helvetica,Arial
 .partners-slider{background:var(--ime-white);padding:1rem;border-radius:10px;margin-top:1rem}
 .partners-viewport{overflow:hidden;width:100%}
 .partners-track{display:flex;gap:1rem;align-items:center;transition:transform 420ms cubic-bezier(.22,.9,.32,1);will-change:transform}
-.partner-slide{background:#eef5fb;padding:0.75rem;border-radius:10px;display:flex;align-items:center;justify-content:center;min-width:calc(33.333% - 0.666rem);box-shadow:0 6px 18px rgba(9,30,66,0.08)}
+.partner-slide{background:#eef5fb;padding:0.75rem;border-radius:10px;display:flex;align-items:center;justify-content:center;min-width:100%;box-shadow:0 6px 18px rgba(9,30,66,0.08)}
 .partner-slide img{max-width:100%;max-height:72px;object-fit:contain;filter:contrast(1.15) saturate(1.05) drop-shadow(0 8px 18px rgba(8,16,32,0.16))}
 .partner-slide img:hover{opacity:1}
 .partner-slide:focus{outline:3px solid rgba(11,87,164,0.18);outline-offset:4px}
 .partner-slide img.invert{filter:invert(1) brightness(1.2) contrast(1.15)}
-.partners-controls{display:flex;gap:0.5rem;justify-content:center;margin-top:0.6rem}
-.partners-controls button{border:0;background:var(--ime-blue);color:var(--ime-white);padding:0.4rem 0.6rem;border-radius:6px;cursor:pointer}
+.partners-controls{display:none}
 
 
 /* Partners Grid Page */
