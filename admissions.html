@@ -182,29 +182,29 @@
       <h2 data-lang="en" style="margin-top:2rem">Application Form</h2>
       <h2 data-lang="fr" style="display:none;margin-top:2rem">Formulaire de Demande d'Admission</h2>
       
-      <form action="#" method="post">
+      <form action="#" method="post" style="display:grid;gap:1rem;max-width:600px;margin-top:1rem">
         <div>
           <label for="name" data-lang="en">Full Name *</label>
           <label for="name" data-lang="fr" style="display:none">Nom Complet *</label>
-          <input id="name" name="name" required>
+          <input id="name" name="name" required style="padding:.75rem;border:1px solid #d1d5db;border-radius:6px;width:100%">
         </div>
 
         <div>
           <label for="email" data-lang="en">Email *</label>
           <label for="email" data-lang="fr" style="display:none">Email *</label>
-          <input id="email" name="email" type="email" required>
+          <input id="email" name="email" type="email" required style="padding:.75rem;border:1px solid #d1d5db;border-radius:6px;width:100%">
         </div>
 
         <div>
           <label for="phone" data-lang="en">Phone Number *</label>
           <label for="phone" data-lang="fr" style="display:none">Numéro de Téléphone *</label>
-          <input id="phone" name="phone" type="tel" required>
+          <input id="phone" name="phone" type="tel" required style="padding:.75rem;border:1px solid #d1d5db;border-radius:6px;width:100%">
         </div>
 
         <div>
           <label for="program" data-lang="en">Program *</label>
           <label for="program" data-lang="fr" style="display:none">Programme *</label>
-          <select id="program" name="program" required>
+          <select id="program" name="program" required style="padding:.75rem;border:1px solid #d1d5db;border-radius:6px;width:100%">
             <option data-lang="en">Select a program</option>
             <option data-lang="fr" style="display:none">Sélectionnez un programme</option>
             <option data-lang="en">Engineering (Polytech Douala)</option>
@@ -223,7 +223,7 @@
         <div>
           <label for="message" data-lang="en">Message</label>
           <label for="message" data-lang="fr" style="display:none">Message</label>
-          <textarea id="message" name="message" rows="5"></textarea>
+          <textarea id="message" name="message" rows="5" style="padding:.75rem;border:1px solid #d1d5db;border-radius:6px;width:100%"></textarea>
         </div>
 
         <button class="cta" type="submit" data-lang="en">Submit Application</button>
