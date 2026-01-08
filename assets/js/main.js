@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     function startAuto(){
       stopAuto();
-      timer = setInterval(nextGroup, 3000);
+      timer = setInterval(nextGroup, 1000);
     }
 
     function stopAuto(){
