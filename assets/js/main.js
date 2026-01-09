@@ -323,14 +323,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   initPartnersCarousel();
 
-  // Auto-invert partner images on the partners page grid as well
+  // Auto-invert partner images on all partner-related grids and carousels
   (function invertPartnersGrid() {
-    const imgs = Array.from(document.querySelectorAll('.partners-grid img, .partners-grid-new img'));
+    const selector = '.partners-grid img, .partners-grid-new img, .partners-track img';
+    const imgs = Array.from(document.querySelectorAll(selector));
     imgs.forEach(img => {
       const check = () => shouldInvertImage(img).then(inv => { if (inv) img.classList.add('invert'); });
       if (img.complete) check(); else img.addEventListener('load', check);
       // ensure container is focusable
-      const container = img.closest('.partner-item, .partner-card');
+      const container = img.closest('.partner-item, .partner-card, .partner-slide');
       if (container && !container.hasAttribute('tabindex')) container.setAttribute('tabindex', '0');
     });
   })();
