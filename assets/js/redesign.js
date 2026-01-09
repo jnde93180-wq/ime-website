@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const revealObserver = new IntersectionObserver(revealCallback, {
-        threshold: 0.15
+        threshold: 0.1, // Trigger earlier
+        rootMargin: '0px 0px -50px 0px' // Add a bit of buffer
     });
 
     document.querySelectorAll('.reveal').forEach(el => {

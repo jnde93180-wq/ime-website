@@ -30,13 +30,13 @@
     --container-max: 1280px;
 }
 
-/* Base Styles */
 body {
     font-family: var(--font-sans);
     background-color: var(--off-white);
     color: #1e293b;
     overflow-x: hidden;
     line-height: 1.6;
+    padding-top: var(--header-height);
 }
 
 h1,
@@ -58,19 +58,35 @@ h6 {
     width: 100%;
     height: var(--header-height);
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
+    background: rgba(255, 255, 255, 1);
 }
 
-.header-new.scrolled {
-    background: rgba(15, 76, 129, 0.95);
-    height: 70px;
-    box-shadow: var(--shadow-lg);
+.header-new.home-page:not(.scrolled) {
+    background: transparent;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-new.scrolled, .header-new.internal {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: var(--shadow-md);
+}
+
+.header-new .brand-text * {
+    color: var(--white);
+    transition: color 0.3s;
+}
+
+.header-new.scrolled .brand-text *, 
+.header-new.internal .brand-text * {
+    color: var(--primary-blue);
+}
+
+.header-new.home-page:not(.scrolled) .brand-text * {
+    color: var(--white);
 }
 
 .header-new .container {
@@ -85,13 +101,22 @@ h6 {
 
 /* Nav Link Animation */
 .nav-link-new {
-    color: var(--white);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     position: relative;
     padding: 0.5rem 0;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
     font-size: 1rem;
+    margin-left: 2rem;
+}
+
+.header-new.home-page:not(.scrolled) .nav-link-new {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.header-new.scrolled .nav-link-new,
+.header-new.internal .nav-link-new {
+    color: var(--primary-blue);
 }
 
 .nav-link-new::after {
@@ -110,13 +135,19 @@ h6 {
 }
 
 /* Pill-style Language Switcher */
+/* Pill-style Language Switcher */
 .lang-switcher-pill {
     display: flex;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(15, 76, 129, 0.05);
     padding: 4px;
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(15, 76, 129, 0.1);
     gap: 4px;
+}
+
+.header-new.home-page:not(.scrolled) .lang-switcher-pill {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .lang-btn-pill {
@@ -124,19 +155,25 @@ h6 {
     border-radius: 999px;
     border: none;
     background: transparent;
-    color: var(--white);
+    color: var(--primary-blue);
     font-size: 0.875rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    min-height: auto;
-    min-width: auto;
+}
+
+.header-new.home-page:not(.scrolled) .lang-btn-pill {
+    color: var(--white);
 }
 
 .lang-btn-pill.active {
+    background: var(--primary-blue);
+    color: var(--white);
+}
+
+.header-new.home-page:not(.scrolled) .lang-btn-pill.active {
     background: var(--white);
     color: var(--primary-blue);
-    box-shadow: var(--shadow-sm);
 }
 
 /* Text Gradients */
@@ -164,7 +201,8 @@ h6 {
     gap: 4rem;
     position: relative;
     z-index: 5;
-    padding-top: 4rem;
+    padding-top: 100px;
+    /* Offset for fixed header */
     padding-bottom: 6rem;
 }
 
@@ -383,6 +421,10 @@ td {
     text-align: center;
     padding: 2rem;
     background: var(--white);
+    min-height: 250px;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    border-radius: 12px;
 }
 
 .partner-card img {
@@ -540,9 +582,9 @@ td {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-top: -4rem;
-    position: relative;
     z-index: 10;
+    margin-top: 2rem;
+    /* Reduced negative overlap to fix desktop occlusion */
 }
 
 .features-section {
@@ -665,12 +707,41 @@ p {
     font-size: clamp(1rem, 2vw, 1.125rem);
 }
 
-/* Mobile Menu */
+/* Mobile Nav & Hamburger */
 .hamburger-new {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     cursor: pointer;
     background: transparent;
     border: none;
+    z-index: 2001;
+    padding: 10px;
+}
+
+.hamburger-new span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: var(--primary-blue);
+    /* Default blue for light header */
+    transition: 0.3s;
+}
+
+.header-new.scrolled .hamburger-new span,
+.header-new.home-page:not(.scrolled) .hamburger-new span {
+    background: var(--white);
+}
+
+@media (max-width: 968px) {
+    .hamburger-new {
+        display: flex;
+    }
+
+    .nav-new {
+        display: none;
+        /* Hide desktop nav on mobile */
+    }
 }
 
 @media (max-width: 768px) {
@@ -697,4 +768,53 @@ p {
     .nav-new.active {
         right: 0;
     }
+
+}
+
+.partner-card img.invert,
+.partner-slide img.invert {
+    filter: invert(1) brightness(0.2) contrast(1.2) !important;
+}
+
+.news-page main {
+    padding-top: 4rem !important;
+}
+
+.internal-page {
+    padding-top: calc(var(--header-height) + 2rem) !important;
+} 
+
+
+/* FINAL VISIBILITY POLISH */
+.header-new.home-page:not(.scrolled) .brand-text * {
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.lang-btn-pill {
+    border: 1px solid transparent !important;
+}
+
+.header-new.home-page:not(.scrolled) .lang-btn-pill {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.header-new:not(.home-page):not(.scrolled) .lang-btn-pill,
+.header-new.scrolled .lang-btn-pill {
+    border-color: rgba(15, 76, 129, 0.2) !important;
+    color: var(--primary-blue) !important;
+}
+
+.header-new:not(.home-page):not(.scrolled) .lang-btn-pill.active,
+.header-new.scrolled .lang-btn-pill.active {
+    background: var(--primary-blue) !important;
+    color: var(--white) !important;
+}
+
+/* Ensure mobile menu icon is ALWAYS visible */
+.hamburger-new span {
+    background: var(--primary-blue) !important;
+}
+.header-new.home-page:not(.scrolled) .hamburger-new span {
+    background: var(--white) !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }

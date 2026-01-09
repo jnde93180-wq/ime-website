@@ -48,6 +48,32 @@ function initializeLanguage() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initializeLanguage();
+  // Dynamic Header Coloring
+  const header = document.querySelector('.header-new');
+  function updateHeaderTheme() {
+    if (!header) return;
+    const isHome = window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/');
+
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+      header.classList.remove('transparent');
+      header.classList.add('light-text');
+      header.classList.remove('dark-text');
+    } else {
+      header.classList.remove('scrolled');
+      if (isHome) {
+        header.classList.add('transparent');
+        header.classList.add('light-text');
+        header.classList.remove('dark-text');
+      } else {
+        header.classList.add('internal');
+        header.classList.add('light-text');
+      }
+    }
+  }
+  window.addEventListener('scroll', updateHeaderTheme);
+  updateHeaderTheme();
+
   // Hamburger toggle - legacy and new
   const btns = document.querySelectorAll('#nav-toggle, .hamburger-new');
   const nav = document.querySelector('#nav, .nav-new');
@@ -88,6 +114,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Utility: detect mostly-white images that need inversion
   function shouldInvertImage(img) {
     return new Promise((resolve) => {
+      // Force inversion for specific white-logo filenames
+      const src = img.src.toLowerCase();
+      if (src.includes('blanc') || src.includes('white')) {
+        return resolve(true);
+      }
+
       try {
         const w = 8, h = 8;
         const c = document.createElement('canvas'); c.width = w; c.height = h;
@@ -103,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (count === 0) return resolve(false);
         const avg = total / count;
-        resolve(avg > 200); // very light images -> invert
+        resolve(avg > 180); // lowered threshold slightly to catch more
       } catch (e) { resolve(false); }
     });
   }
@@ -156,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
         void track.offsetHeight;
         track.style.transition = '';
       } else {
-        track.style.transition = '';
+        track.style.transition = 'transform 0.5s ease-in-out';
         track.style.transform = `translateX(-${i * slideWidth}px)`;
       }
     }
