@@ -9,6 +9,7 @@
   <meta name="theme-color" content="#0b57a4">
   <link rel="icon" href="assets/images/logo-ime-p.png" type="image/png">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/redesign.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"ContactPage","name":"Contact — IME School","url":"https://www.ime-school.com/contact"}
   </script>
@@ -16,10 +17,10 @@
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="header">
-    <div class="container top">
+  <header class="header-new">
+    <div class="container">
       <div class="brand">
-        <a href="index.html" aria-label="IME Home">
+        <a href="index.html" aria-label="IME Home" class="logo-link">
           <picture>
             <source type="image/avif" srcset="assets/images/logo-ime-p.avif">
             <source type="image/webp" srcset="assets/images/logo-ime-p.webp">
@@ -35,50 +36,88 @@
           <div class="brand-slogan" data-lang="fr" style="display:none">Passion pour l'Excellence</div>
         </div>
       </div>
-      <nav aria-label="Main navigation">
-        <div class="header-controls">
-          <div class="lang-switcher">
-            <button class="lang-btn" data-lang-btn="en">EN</button>
-            <button class="lang-btn lang-btn--active" data-lang-btn="fr">FR</button>
-          </div>
-          <button id="nav-toggle" class="hamburger" aria-expanded="false" aria-controls="nav">☰</button>
-        </div>
-        <div id="nav" class="nav" role="menu">
-          <a href="index.html" data-lang="en">Home</a>
-          <a href="index.html" data-lang="fr" style="display:none">Accueil</a>
-          <a href="about.html" data-lang="en">About</a>
-          <a href="about.html" data-lang="fr" style="display:none">À Propos</a>
-          <a href="admissions.html" data-lang="en">Admissions</a>
-          <a href="admissions.html" data-lang="fr" style="display:none">Admission</a>
-          <a href="news.html" data-lang="en">News</a>
-          <a href="news.html" data-lang="fr" style="display:none">Actualités</a>
-          <a href="partners.html" data-lang="en">Partners</a>
-          <a href="partners.html" data-lang="fr" style="display:none">Partenaires</a>
-          <a href="contact.html" data-lang="en">Contact</a>
-          <a href="contact.html" data-lang="fr" style="display:none">Contact</a>
-        </div>
+      <nav class="nav-new" id="nav" role="menu">
+        <a href="index.html" class="nav-link-new" data-lang="en">Home</a>
+        <a href="index.html" class="nav-link-new" data-lang="fr" style="display:none">Accueil</a>
+        <a href="about.html" class="nav-link-new" data-lang="en">About</a>
+        <a href="about.html" class="nav-link-new" data-lang="fr" style="display:none">À Propos</a>
+        <a href="admissions.html" class="nav-link-new" data-lang="en">Admissions</a>
+        <a href="admissions.html" class="nav-link-new" data-lang="fr" style="display:none">Admission</a>
+        <a href="partners.html" class="nav-link-new" data-lang="en">Partners</a>
+        <a href="partners.html" class="nav-link-new" data-lang="fr" style="display:none">Partenaires</a>
+        <a href="news.html" class="nav-link-new" data-lang="en">News</a>
+        <a href="news.html" class="nav-link-new" data-lang="fr" style="display:none">Actualités</a>
+        <a href="contact.html" class="nav-link-new" data-lang="en">Contact</a>
+        <a href="contact.html" class="nav-link-new" data-lang="fr" style="display:none">Contact</a>
       </nav>
+      <div class="header-controls-new">
+        <div class="lang-switcher-pill">
+          <button class="lang-btn-pill" data-lang-btn="en">EN</button>
+          <button class="lang-btn-pill" data-lang-btn="fr">FR</button>
+        </div>
+        <button id="nav-toggle" class="hamburger-new" aria-expanded="false" aria-controls="nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main id="main" class="container" tabindex="-1">
-    <article class="section">
-      <h1>Contact Us</h1>
-      <p>We'd love to hear from you. Please get in touch for admissions, tours, or general enquiries.</p>
+  <main id="main" class="container reveal" tabindex="-1">
+    <div class="contact-layout">
+      <article class="section reveal">
+        <h1 class="text-gradient" data-lang="en">Get in Touch</h1>
+        <h1 class="text-gradient" data-lang="fr" style="display:none">Contactez-nous</h1>
+        <p class="lead" data-lang="en">We'd love to hear from you. Please get in touch for admissions, tours, or general
+          enquiries.</p>
+        <p class="lead" data-lang="fr" style="display:none">Nous serions ravis de vous entendre. N'hésitez pas à nous
+          contacter pour les admissions, les visites ou les demandes générales.</p>
 
-      <form action="#" method="post">
-        <label for="name">Name</label>
-        <input id="name" name="name" required>
+        <form action="#" method="post" class="form-new card-3d reveal" style="margin-top: 2rem;">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name" data-lang="en">Full Name</label>
+              <label for="name" data-lang="fr" style="display:none">Nom Complet</label>
+              <input id="name" name="name" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+              <label for="email" data-lang="en">Email Address</label>
+              <label for="email" data-lang="fr" style="display:none">Adresse Email</label>
+              <input id="email" name="email" type="email" required placeholder="john@example.com">
+            </div>
+          </div>
+          <div class="form-group" style="margin-top: 1.5rem;">
+            <label for="message" data-lang="en">Your Message</label>
+            <label for="message" data-lang="fr" style="display:none">Votre Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="How can we help you?"></textarea>
+          </div>
+          <div style="margin-top: 2rem;">
+            <button class="btn-magnetic btn-large" type="submit" data-lang="en">Send Message</button>
+            <button class="btn-magnetic btn-large" type="submit" data-lang="fr" style="display:none">Envoyer le
+              Message</button>
+          </div>
+        </form>
+      </article>
 
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required>
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5"></textarea>
-
-        <button class="cta" type="submit">Send Message</button>
-      </form>
-    </article>
+      <aside class="contact-sidebar reveal">
+        <div class="card-3d" style="padding: 2rem;">
+          <h3 class="text-gradient" data-lang="en">Direct Contact</h3>
+          <h3 class="text-gradient" data-lang="fr" style="display:none">Contact Direct</h3>
+          <div class="contact-info-list" style="margin-top: 1.5rem;">
+            <div class="contact-info-item">
+              <strong>Email</strong>
+              <p>infos@ime-school.com</p>
+            </div>
+            <div class="contact-info-item" style="margin-top: 1.5rem;">
+              <strong>Phone</strong>
+              <p>+237 683 55 78 34</p>
+              <p>+237 690 523 505</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
   </main>
 
   <footer class="footer">
@@ -105,6 +144,7 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/redesign.js"></script>
 </body>
 
 </html>

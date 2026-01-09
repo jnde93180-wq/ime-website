@@ -21,8 +21,10 @@ function updateLanguageButtonState(lang) {
   document.querySelectorAll('[data-lang-btn]').forEach(btn => {
     if (btn.getAttribute('data-lang-btn') === lang) {
       btn.classList.add('lang-btn--active');
+      btn.classList.add('active'); // Supporting redesign.css .active class
     } else {
       btn.classList.remove('lang-btn--active');
+      btn.classList.remove('active');
     }
   });
 }
@@ -46,23 +48,36 @@ function initializeLanguage() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initializeLanguage();
-  const btn = document.getElementById('nav-toggle');
-  const nav = document.getElementById('nav');
-  if (btn && nav) {
+  // Hamburger toggle - legacy and new
+  const btns = document.querySelectorAll('#nav-toggle, .hamburger-new');
+  const nav = document.querySelector('#nav, .nav-new');
+  btns.forEach(btn => {
     btn.addEventListener('click', () => {
       const expanded = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', String(!expanded));
-      nav.classList.toggle('nav--open');
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
-        btn.setAttribute('aria-expanded', 'false');
-        nav.classList.remove('nav--open');
-        btn.focus();
+      if (nav) {
+        nav.classList.toggle('nav--open');
+        nav.classList.toggle('active'); // For redesign mobile menu
       }
+      btn.classList.toggle('active'); // For hamburger animation
     });
-  }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      btns.forEach(btn => {
+        if (btn.getAttribute('aria-expanded') === 'true') {
+          btn.setAttribute('aria-expanded', 'false');
+          if (nav) {
+            nav.classList.remove('nav--open');
+            nav.classList.remove('active');
+          }
+          btn.classList.remove('active');
+          btn.focus();
+        }
+      });
+    }
+  });
 
   const focusable = document.querySelectorAll('a, button, input, textarea');
   focusable.forEach(el => {
@@ -310,12 +325,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Auto-invert partner images on the partners page grid as well
   (function invertPartnersGrid() {
-    const imgs = Array.from(document.querySelectorAll('.partners-grid img'));
+    const imgs = Array.from(document.querySelectorAll('.partners-grid img, .partners-grid-new img'));
     imgs.forEach(img => {
       const check = () => shouldInvertImage(img).then(inv => { if (inv) img.classList.add('invert'); });
       if (img.complete) check(); else img.addEventListener('load', check);
       // ensure container is focusable
-      const container = img.closest('.partner-item');
+      const container = img.closest('.partner-item, .partner-card');
       if (container && !container.hasAttribute('tabindex')) container.setAttribute('tabindex', '0');
     });
   })();

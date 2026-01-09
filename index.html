@@ -9,6 +9,7 @@
   <meta name="theme-color" content="#0b57a4">
   <link rel="icon" href="assets/images/logo-ime-p.png" type="image/png">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/redesign.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script type="application/ld+json">
   {
@@ -24,10 +25,10 @@
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="header">
-    <div class="container top">
+  <header class="header-new">
+    <div class="container">
       <div class="brand">
-        <a href="index.html" aria-label="IME Home">
+        <a href="index.html" aria-label="IME Home" class="logo-link">
           <picture>
             <source type="image/avif" srcset="assets/images/logo-ime-p.avif" />
             <source type="image/webp" srcset="assets/images/logo-ime-p.webp" />
@@ -43,79 +44,125 @@
           <div class="brand-slogan" data-lang="fr" style="display:none">Passion pour l'Excellence</div>
         </div>
       </div>
-      <nav aria-label="Main navigation">
-        <div class="header-controls">
-          <div class="lang-switcher">
-            <button class="lang-btn" data-lang-btn="en">EN</button>
-            <button class="lang-btn lang-btn--active" data-lang-btn="fr">FR</button>
-          </div>
-          <button id="nav-toggle" class="hamburger" aria-expanded="false" aria-controls="nav">☰</button>
-        </div>
-        <div id="nav" class="nav" role="menu">
-          <a href="index.html" data-lang="en">Home</a>
-          <a href="index.html" data-lang="fr" style="display:none">Accueil</a>
-          <a href="about.html" data-lang="en">About</a>
-          <a href="about.html" data-lang="fr" style="display:none">À Propos</a>
-          <a href="admissions.html" data-lang="en">Admissions</a>
-          <a href="admissions.html" data-lang="fr" style="display:none">Admission</a>
-          <a href="partners.html" data-lang="en">Partners</a>
-          <a href="partners.html" data-lang="fr" style="display:none">Partenaires</a>
-          <a href="news.html" data-lang="en">News</a>
-          <a href="news.html" data-lang="fr" style="display:none">Actualités</a>
-          <a href="contact.html" data-lang="en">Contact</a>
-          <a href="contact.html" data-lang="fr" style="display:none">Contact</a>
-        </div>
+      <nav class="nav-new" id="nav" role="menu">
+        <a href="index.html" class="nav-link-new" data-lang="en">Home</a>
+        <a href="index.html" class="nav-link-new" data-lang="fr" style="display:none">Accueil</a>
+        <a href="about.html" class="nav-link-new" data-lang="en">About</a>
+        <a href="about.html" class="nav-link-new" data-lang="fr" style="display:none">À Propos</a>
+        <a href="admissions.html" class="nav-link-new" data-lang="en">Admissions</a>
+        <a href="admissions.html" class="nav-link-new" data-lang="fr" style="display:none">Admission</a>
+        <a href="partners.html" class="nav-link-new" data-lang="en">Partners</a>
+        <a href="partners.html" class="nav-link-new" data-lang="fr" style="display:none">Partenaires</a>
+        <a href="news.html" class="nav-link-new" data-lang="en">News</a>
+        <a href="news.html" class="nav-link-new" data-lang="fr" style="display:none">Actualités</a>
+        <a href="contact.html" class="nav-link-new" data-lang="en">Contact</a>
+        <a href="contact.html" class="nav-link-new" data-lang="fr" style="display:none">Contact</a>
       </nav>
+      <div class="header-controls-new">
+        <div class="lang-switcher-pill">
+          <button class="lang-btn-pill" data-lang-btn="en">EN</button>
+          <button class="lang-btn-pill" data-lang-btn="fr">FR</button>
+        </div>
+        <button id="nav-toggle" class="hamburger-new" aria-expanded="false" aria-controls="nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <div class="hero">
-    <div class="container">
-      <h1 data-lang="en">Welcome to IME</h1>
-      <h1 data-lang="fr" style="display:none">Bienvenue à IME</h1>
-      <h2 style="font-size:1.2rem;font-weight:400;margin:0.5rem 0 1rem;opacity:0.95" data-lang="en">Higher Institute of
-        Management & Entrepreneurship</h2>
-      <h2 style="font-size:1.2rem;font-weight:400;margin:0.5rem 0 1rem;opacity:0.95;display:none" data-lang="fr">
-        Institut Supérieur de Management et de l'Entrepreneuriat</h2>
-      <p data-lang="en"><em>Passion for Excellence</em> — We train in excellence and for excellence. Discover our
-        diverse programs and join our community of future leaders.</p>
-      <p data-lang="fr" style="display:none"><em>Passion pour l'Excellence</em> — Nous formons dans l'excellence et pour
-        l'excellence. Découvrez nos programmes variés et rejoignez notre communauté de futurs leaders.</p>
+  <section class="hero-new">
+    <div class="hero-bg-anim"></div>
+    <div class="container hero-container">
+      <div class="hero-content reveal">
+        <h1 class="text-gradient" data-lang="en">Welcome to IME</h1>
+        <h1 class="text-gradient" data-lang="fr" style="display:none">Bienvenue à IME</h1>
+        <h2 class="hero-subtitle" data-lang="en">Higher Institute of Management & Entrepreneurship</h2>
+        <h2 class="hero-subtitle" data-lang="fr" style="display:none">Institut Supérieur de Management et de
+          l'Entrepreneuriat</h2>
+        <p data-lang="en"><em>Passion for Excellence</em> — We train in excellence and for excellence. Discover our
+          diverse programs and join our community of future leaders.</p>
+        <p data-lang="fr" style="display:none"><em>Passion pour l'Excellence</em> — Nous formons dans l'excellence et
+          pour l'excellence. Découvrez nos programmes variés et rejoignez notre communauté de futurs leaders.</p>
+        <div class="hero-ctas">
+          <a href="#main" class="btn-magnetic" data-lang="en">Our Programs</a>
+          <a href="#main" class="btn-magnetic" data-lang="fr" style="display:none">Nos Programmes</a>
+          <a href="contact.html" class="btn-magnetic btn-outline" data-lang="en">Contact Us</a>
+          <a href="contact.html" class="btn-magnetic btn-outline" data-lang="fr" style="display:none">Nous Contacter</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="floating">
+          <picture>
+            <source type="image/avif" srcset="assets/images/logo-ime-p.avif" />
+            <source type="image/webp" srcset="assets/images/logo-ime-p.webp" />
+            <img src="assets/images/logo-ime-p.png" alt="IME School" class="img-hero-large">
+          </picture>
+        </div>
+      </div>
+    </div>
+    <div class="wave-divider">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path
+          d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C57.86,108.82,143.61,113,213.52,104.42,268.31,97.77,314.12,71.22,321.39,56.44Z"
+          fill="#f8fafc"></path>
+      </svg>
+    </div>
+  </section>
 
-      <picture>
-        <source type="image/avif" srcset="assets/images/logo-ime-p.avif" />
-        <source type="image/webp" srcset="assets/images/logo-ime-p.webp" />
-        <img src="assets/images/logo-ime-p.png" alt="IME School" class="img-hero" loading="lazy"
-          style="margin-top:1rem">
-      </picture>
-      <div class="cards" style="margin-top:1.5rem">
-        <div class="card">
+  <main id="main">
+    <section class="features-section container">
+      <div class="cards-grid">
+        <div class="card-3d reveal" style="transition-delay: 0.1s;">
           <h3 data-lang="en">Multiple Programs</h3>
           <h3 data-lang="fr" style="display:none">Programmes Variés</h3>
           <p data-lang="en">Engineering, BTS, Bachelor, Master — choose your path.</p>
           <p data-lang="fr" style="display:none">Ingénierie, BTS, Bachelor, Master — choisissez votre parcours.</p>
         </div>
-        <div class="card">
+        <div class="card-3d reveal" style="transition-delay: 0.2s;">
           <h3 data-lang="en">International Partnerships</h3>
           <h3 data-lang="fr" style="display:none">Partenariats Internationaux</h3>
           <p data-lang="en">Study in France, Canada, and more with partner universities.</p>
           <p data-lang="fr" style="display:none">Étudiez en France, au Canada et ailleurs avec nos universités
             partenaires.</p>
         </div>
-        <div class="card">
+        <div class="card-3d reveal" style="transition-delay: 0.3s;">
           <h3 data-lang="en">Professional Growth</h3>
           <h3 data-lang="fr" style="display:none">Croissance Professionnelle</h3>
           <p data-lang="en">Career support, internships, and industry connections.</p>
           <p data-lang="fr" style="display:none">Support carrière, stages et connexions avec l'industrie.</p>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <main id="main" class="container" tabindex="-1">
     <section class="main-content">
-      <div>
-        <article class="section">
+      <div class="reveal">
+        <!-- New Stats Section -->
+        <div class="stats-grid reveal" style="margin-bottom: 3rem;">
+          <div class="stat-card">
+            <div class="counter-num text-gradient" data-target="15">0</div>
+            <p data-lang="en">Years of Excellence</p>
+            <p data-lang="fr" style="display:none">Années d'Excellence</p>
+          </div>
+          <div class="stat-card">
+            <div class="counter-num text-gradient" data-target="2500">0</div>
+            <p data-lang="en">Students Trained</p>
+            <p data-lang="fr" style="display:none">Étudiants Formés</p>
+          </div>
+          <div class="stat-card">
+            <div class="counter-num text-gradient" data-target="50">0</div>
+            <p data-lang="en">Partner Institutions</p>
+            <p data-lang="fr" style="display:none">Institutions Partenaires</p>
+          </div>
+          <div class="stat-card">
+            <div class="counter-num text-gradient" data-target="95">0</div>
+            <p data-lang="en">% Employment Rate</p>
+            <p data-lang="fr" style="display:none">% de Taux d'Emploi</p>
+          </div>
+        </div>
+
+        <article class="section reveal">
           <h2 data-lang="en">Our Programs</h2>
           <h2 data-lang="fr" style="display:none">Nos Programmes</h2>
           <p data-lang="en">IME offers a wide range of programs designed to meet the needs of students and
@@ -138,10 +185,7 @@
               style="display:none">Voir tous les programmes →</a></p>
         </article>
 
-        <!-- Removed campuses / reasons / vision / INCUBIME / certifications from homepage to keep the homepage concise.
-             Partners carousel remains below. -->
-
-        <article class="section" style="margin-top:1rem">
+        <article class="section reveal" style="margin-top:2rem">
           <h2 data-lang="en">Our Partners</h2>
           <h2 data-lang="fr" style="display:none">Nos Partenaires</h2>
           <p data-lang="en">IME collaborates with leading international institutions</p>
@@ -186,23 +230,41 @@
           <p style="text-align:center;margin-top:1rem"><a href="partners.html" data-lang="en">View all partners →</a><a
               href="partners.html" data-lang="fr" style="display:none">Voir tous les partenaires →</a></p>
         </article>
+
+        <!-- Testimonials Section -->
+        <article class="section reveal" style="margin-top:2rem">
+          <h2 class="text-center" data-lang="en">What Our Students Say</h2>
+          <h2 class="text-center" data-lang="fr" style="display:none">Ce Que Disent Nos Étudiants</h2>
+          <div class="testimonials-grid">
+            <div class="testimonial-card card-3d">
+              <p>"IME provided me with the technical skills and international perspective I needed to succeed in global
+                engineering."</p>
+              <div class="testimonial-author">- Jean Dupont, <em>Polytech Alumni</em></div>
+            </div>
+            <div class="testimonial-card card-3d">
+              <p>"The professional environment and industry connections at IME are unmatched. I secured my internship
+                within weeks."</p>
+              <div class="testimonial-author">- Marie Sone, <em>BTS Management</em></div>
+            </div>
+          </div>
+        </article>
       </div>
 
       <aside class="sidebar">
-        <div class="section">
+        <div class="section reveal">
           <h3 data-lang="en">Quick Links</h3>
           <h3 data-lang="fr" style="display:none">Liens Rapides</h3>
           <div class="quick-links">
-            <a href="admissions.html" data-lang="en">Apply for Admissions</a>
-            <a href="admissions.html" data-lang="fr" style="display:none">Demander l'Admission</a>
-            <a href="contact.html" data-lang="en">Contact Us</a>
-            <a href="contact.html" data-lang="fr" style="display:none">Nous Contacter</a>
-            <a href="about.html" data-lang="en">About Us</a>
-            <a href="about.html" data-lang="fr" style="display:none">À Propos de Nous</a>
+            <a href="admissions.html" class="nav-link-new" data-lang="en">Apply for Admissions</a>
+            <a href="admissions.html" class="nav-link-new" data-lang="fr" style="display:none">Demander l'Admission</a>
+            <a href="contact.html" class="nav-link-new" data-lang="en">Contact Us</a>
+            <a href="contact.html" class="nav-link-new" data-lang="fr" style="display:none">Nous Contacter</a>
+            <a href="about.html" class="nav-link-new" data-lang="en">About Us</a>
+            <a href="about.html" class="nav-link-new" data-lang="fr" style="display:none">À Propos de Nous</a>
           </div>
         </div>
 
-        <div class="section" style="margin-top:1rem">
+        <div class="section reveal" style="margin-top:2rem">
           <h3 data-lang="en">Contact Info</h3>
           <h3 data-lang="fr" style="display:none">Informations de Contact</h3>
           <p>📧 infos@ime-school.com</p>
@@ -237,6 +299,7 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/redesign.js"></script>
 </body>
 
 </html>

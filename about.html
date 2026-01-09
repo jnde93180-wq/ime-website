@@ -9,6 +9,7 @@
   <meta name="theme-color" content="#0b57a4">
   <link rel="icon" href="assets/images/logo-ime-p.png" type="image/png">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/redesign.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"IME School","url":"https://www.ime-school.com"}
   </script>
@@ -16,10 +17,10 @@
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="header">
-    <div class="container top">
+  <header class="header-new">
+    <div class="container">
       <div class="brand">
-        <a href="index.html" aria-label="IME Home">
+        <a href="index.html" aria-label="IME Home" class="logo-link">
           <picture>
             <source type="image/avif" srcset="assets/images/logo-ime-p.avif">
             <source type="image/webp" srcset="assets/images/logo-ime-p.webp">
@@ -35,91 +36,116 @@
           <div class="brand-slogan" data-lang="fr" style="display:none">Passion pour l'Excellence</div>
         </div>
       </div>
-      <nav aria-label="Main navigation">
-        <div class="header-controls">
-          <div class="lang-switcher">
-            <button class="lang-btn" data-lang-btn="en">EN</button>
-            <button class="lang-btn lang-btn--active" data-lang-btn="fr">FR</button>
-          </div>
-          <button id="nav-toggle" class="hamburger" aria-expanded="false" aria-controls="nav">☰</button>
-        </div>
-        <div id="nav" class="nav" role="menu">
-          <a href="index.html" data-lang="en">Home</a>
-          <a href="index.html" data-lang="fr" style="display:none">Accueil</a>
-          <a href="about.html" data-lang="en">About</a>
-          <a href="about.html" data-lang="fr" style="display:none">À Propos</a>
-          <a href="admissions.html" data-lang="en">Admissions</a>
-          <a href="admissions.html" data-lang="fr" style="display:none">Admission</a>
-          <a href="partners.html" data-lang="en">Partners</a>
-          <a href="partners.html" data-lang="fr" style="display:none">Partenaires</a>
-          <a href="news.html" data-lang="en">News</a>
-          <a href="news.html" data-lang="fr" style="display:none">Actualités</a>
-          <a href="contact.html" data-lang="en">Contact</a>
-          <a href="contact.html" data-lang="fr" style="display:none">Contact</a>
-        </div>
+      <nav class="nav-new" id="nav" role="menu">
+        <a href="index.html" class="nav-link-new" data-lang="en">Home</a>
+        <a href="index.html" class="nav-link-new" data-lang="fr" style="display:none">Accueil</a>
+        <a href="about.html" class="nav-link-new" data-lang="en">About</a>
+        <a href="about.html" class="nav-link-new" data-lang="fr" style="display:none">À Propos</a>
+        <a href="admissions.html" class="nav-link-new" data-lang="en">Admissions</a>
+        <a href="admissions.html" class="nav-link-new" data-lang="fr" style="display:none">Admission</a>
+        <a href="partners.html" class="nav-link-new" data-lang="en">Partners</a>
+        <a href="partners.html" class="nav-link-new" data-lang="fr" style="display:none">Partenaires</a>
+        <a href="news.html" class="nav-link-new" data-lang="en">News</a>
+        <a href="news.html" class="nav-link-new" data-lang="fr" style="display:none">Actualités</a>
+        <a href="contact.html" class="nav-link-new" data-lang="en">Contact</a>
+        <a href="contact.html" class="nav-link-new" data-lang="fr" style="display:none">Contact</a>
       </nav>
+      <div class="header-controls-new">
+        <div class="lang-switcher-pill">
+          <button class="lang-btn-pill" data-lang-btn="en">EN</button>
+          <button class="lang-btn-pill" data-lang-btn="fr">FR</button>
+        </div>
+        <button id="nav-toggle" class="hamburger-new" aria-expanded="false" aria-controls="nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main id="main" class="container" tabindex="-1">
+  <main id="main" class="container reveal" tabindex="-1">
     <section class="main-content">
       <div>
-        <article class="section">
-          <h1 data-lang="en">Our Vision & Mission</h1>
-          <h1 data-lang="fr" style="display:none">Notre Vision & Mission</h1>
-          <p data-lang="en">We work every day to provide you with a curriculum based on: pedagogical rigor, academic
-            excellence, civic behavior, and professionalization. Through this approach, we aim to reduce brain drain by
-            offering training at international standards. We continuously collaborate with companies to bridge the gap
-            between their human resource needs and management and engineering training in Africa.</p>
-          <p data-lang="fr" style="display:none">Nous travaillons chaque jour à vous offrir un cursus de formation fondé
-            sur : la rigueur pédagogique, l'excellence académique, le comportement citoyen et la professionnalisation.
-            Nous souhaitons à travers cette démarche, contribuer à réduire l'expatriation des cadres et des dirigeants,
-            tous à la recherche de formations à la hauteur des standards internationaux. Aussi, nous collaborons
-            continuellement avec les entreprises, afin de réduire la fracture actuelle entre les besoins en ressources
-            humaines de ces dernières et les offres de formations en management et ingénierie en Afrique.</p>
+        <article class="section reveal">
+          <h1 class="text-gradient" data-lang="en">Our Vision & Mission</h1>
+          <h1 class="text-gradient" data-lang="fr" style="display:none">Notre Vision & Mission</h1>
+          <p class="lead" data-lang="en">We work every day to provide you with a curriculum based on: pedagogical rigor,
+            academic excellence, civic behavior, and professionalization.</p>
+          <p class="lead" data-lang="fr" style="display:none">Nous travaillons chaque jour à vous offrir un cursus de
+            formation fondé sur : la rigueur pédagogique, l'excellence académique, le comportement citoyen et la
+            professionnalisation.</p>
+          <p data-lang="en">Through this approach, we aim to reduce brain drain by offering training at international
+            standards. We continuously collaborate with companies to bridge the gap between their human resource needs
+            and management and engineering training in Africa.</p>
+          <p data-lang="fr" style="display:none">Nous souhaitons à travers cette démarche, contribuer à réduire
+            l'expatriation des cadres et des dirigeants, tous à la recherche de formations à la hauteur des standards
+            internationaux. Aussi, nous collaborons continuellement avec les entreprises, afin de réduire la fracture
+            actuelle entre les besoins en ressources humaines de ces dernières et les offres de formations en management
+            et ingénierie en Afrique.</p>
         </article>
 
-        <article class="section" style="margin-top:1rem">
+        <article class="section reveal" style="margin-top:2rem">
           <h2 data-lang="en">Why Choose IME?</h2>
           <h2 data-lang="fr" style="display:none">Pourquoi Choisir IME?</h2>
-          <ol class="reasons-grid">
-            <li><span data-lang="en">1 — First institution in Central Africa certified ISO 9001</span><span
-                data-lang="fr" style="display:none">1 — 1er établissement d'Afrique Centrale certifié ISO 9001</span>
-            </li>
-            <li><span data-lang="en">2 — 12+ years of experience; average 89% BTS and 95% HND pass rates</span><span
-                data-lang="fr" style="display:none">2 — Plus de 12 ans d'expérience et toujours dans le top 10 des
-                meilleurs établissements avec en moyenne 89% de réussite au BTS et 95% au HND</span></li>
-            <li><span data-lang="en">3 — Direct entry to 3rd year at partner institutions with double
-                degrees</span><span data-lang="fr" style="display:none">3 — Accès direct en 3e année dans l'une des
-                écoles partenaires pour les étudiants suivant des programmes internationaux, avec double diplomation
-                associée</span></li>
-            <li><span data-lang="en">4 — Academic internships for all students; 85%+ placement rate</span><span
-                data-lang="fr" style="display:none">4 — Stages académiques offerts à tous les étudiants et taux global
-                d'insertion professionnelle de plus de 85%</span></li>
-            <li><span data-lang="en">5 — 3 training approaches: Project-based, Apprenticeship,
-                Competency-based</span><span data-lang="fr" style="display:none">5 — 3 approches de formations : par
-                projets, par alternance, et par compétences</span></li>
-            <li><span data-lang="en">6 — Faculty of experts, PhD candidates, PhDs and Professors</span><span
-                data-lang="fr" style="display:none">6 — Des enseignants aux rangs d'experts, doctorants, docteurs et
-                Professeurs</span></li>
-          </ol>
+          <div class="timeline-container">
+            <div class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content card-3d">
+                <span data-lang="en"><strong>1 — ISO 9001 Certified</strong><br>First institution in Central Africa
+                  certified ISO 9001.</span>
+                <span data-lang="fr" style="display:none"><strong>1 — Certifié ISO 9001</strong><br>1er établissement
+                  d'Afrique Centrale certifié ISO 9001.</span>
+              </div>
+            </div>
+            <div class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content card-3d">
+                <span data-lang="en"><strong>2 — 12+ Years Experience</strong><br>Top 10 institution with 89% BTS and
+                  95% HND pass rates.</span>
+                <span data-lang="fr" style="display:none"><strong>2 — 12+ Ans d'Expérience</strong><br>Plus de 12 ans
+                  d'expérience; moyenne 89% BTS et 95% HND.</span>
+              </div>
+            </div>
+            <div class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content card-3d">
+                <span data-lang="en"><strong>3 — International Mobility</strong><br>Direct entry to 3rd year at partner
+                  institutions with double degrees.</span>
+                <span data-lang="fr" style="display:none"><strong>3 — Mobilité Internationale</strong><br>Accès direct
+                  en 3e année dans les écoles partenaires avec double diplomation.</span>
+              </div>
+            </div>
+          </div>
         </article>
 
-        <article class="section" style="margin-top:1rem">
+        <article class="section reveal" style="margin-top:2rem">
           <h2 data-lang="en">Our Campuses</h2>
           <h2 data-lang="fr" style="display:none">Nos Campus</h2>
-          <ul>
-            <li data-lang="en"><strong>Business Campus</strong> — Bonamoussadi, Douala</li>
-            <li data-lang="fr" style="display:none"><strong>Campus Business</strong> — Bonamoussadi, Douala</li>
-            <li data-lang="en"><strong>ENG-INNOV Campus</strong> — Bonamoussadi, Douala (Built by IME engineering
-              students)</li>
-            <li data-lang="fr" style="display:none"><strong>Campus ENG-INNOV</strong> — Bonamoussadi, Douala (Construit
-              par les étudiants en Ingénierie d'IME)</li>
-            <li data-lang="en"><strong>Leader Campus</strong> — Akwa, Douala</li>
-            <li data-lang="fr" style="display:none"><strong>Campus Leader</strong> — Akwa, Douala</li>
-            <li data-lang="en"><strong>Global Campus</strong> — Bafoussam</li>
-            <li data-lang="fr" style="display:none"><strong>Campus Global</strong> — Bafoussam</li>
-          </ul>
+          <div class="cards-grid">
+            <div class="card-3d reveal" style="transition-delay: 0.1s;">
+              <h3 data-lang="en">Business Campus</h3>
+              <h3 data-lang="fr" style="display:none">Campus Business</h3>
+              <p>Bonamoussadi, Douala</p>
+            </div>
+            <div class="card-3d reveal" style="transition-delay: 0.2s;">
+              <h3 data-lang="en">ENG-INNOV Campus</h3>
+              <h3 data-lang="fr" style="display:none">Campus ENG-INNOV</h3>
+              <p data-lang="en">Bonamoussadi, Douala (Built by IME engineering students)</p>
+              <p data-lang="fr" style="display:none">Bonamoussadi, Douala (Construit par les étudiants en Ingénierie
+                d'IME)</p>
+            </div>
+            <div class="card-3d reveal" style="transition-delay: 0.3s;">
+              <h3 data-lang="en">Leader Campus</h3>
+              <h3 data-lang="fr" style="display:none">Campus Leader</h3>
+              <p>Akwa, Douala</p>
+            </div>
+            <div class="card-3d reveal" style="transition-delay: 0.4s;">
+              <h3 data-lang="en">Global Campus</h3>
+              <h3 data-lang="fr" style="display:none">Campus Global</h3>
+              <p>Bafoussam</p>
+            </div>
+          </div>
         </article>
 
         <article class="section" style="margin-top:1rem">
@@ -133,16 +159,16 @@
       </div>
 
       <aside class="sidebar">
-        <div class="section">
+        <div class="section reveal">
           <h3 data-lang="en">Quick Links</h3>
           <h3 data-lang="fr" style="display:none">Liens Rapides</h3>
           <div class="quick-links">
-            <a href="admissions.html" data-lang="en">Apply for Admissions</a>
-            <a href="admissions.html" data-lang="fr" style="display:none">Demander l'Admission</a>
-            <a href="contact.html" data-lang="en">Contact Us</a>
-            <a href="contact.html" data-lang="fr" style="display:none">Nous Contacter</a>
-            <a href="partners.html" data-lang="en">Partners</a>
-            <a href="partners.html" data-lang="fr" style="display:none">Partenaires</a>
+            <a href="admissions.html" class="nav-link-new" data-lang="en">Apply for Admissions</a>
+            <a href="admissions.html" class="nav-link-new" data-lang="fr" style="display:none">Demander l'Admission</a>
+            <a href="contact.html" class="nav-link-new" data-lang="en">Contact Us</a>
+            <a href="contact.html" class="nav-link-new" data-lang="fr" style="display:none">Nous Contacter</a>
+            <a href="partners.html" class="nav-link-new" data-lang="en">Partners</a>
+            <a href="partners.html" class="nav-link-new" data-lang="fr" style="display:none">Partenaires</a>
           </div>
         </div>
       </aside>
@@ -173,6 +199,7 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/redesign.js"></script>
 </body>
 
 </html>

@@ -9,6 +9,7 @@
   <meta name="theme-color" content="#0b57a4">
   <link rel="icon" href="assets/images/logo-ime-p.png" type="image/png">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/redesign.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Blog","name":"IME School News","url":"https://www.ime-school.com/news"}
   </script>
@@ -16,10 +17,10 @@
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="header">
-    <div class="container top">
+  <header class="header-new">
+    <div class="container">
       <div class="brand">
-        <a href="index.html" aria-label="IME Home">
+        <a href="index.html" aria-label="IME Home" class="logo-link">
           <picture>
             <source type="image/avif" srcset="assets/images/logo-ime-p.avif">
             <source type="image/webp" srcset="assets/images/logo-ime-p.webp">
@@ -35,74 +36,80 @@
           <div class="brand-slogan" data-lang="fr" style="display:none">Passion pour l'Excellence</div>
         </div>
       </div>
-      <nav aria-label="Main navigation">
-        <div class="header-controls">
-          <div class="lang-switcher">
-            <button class="lang-btn" data-lang-btn="en">EN</button>
-            <button class="lang-btn lang-btn--active" data-lang-btn="fr">FR</button>
-          </div>
-          <button id="nav-toggle" class="hamburger" aria-expanded="false" aria-controls="nav">☰</button>
-        </div>
-        <div id="nav" class="nav" role="menu">
-          <a href="index.html" data-lang="en">Home</a>
-          <a href="index.html" data-lang="fr" style="display:none">Accueil</a>
-          <a href="about.html" data-lang="en">About</a>
-          <a href="about.html" data-lang="fr" style="display:none">À Propos</a>
-          <a href="admissions.html" data-lang="en">Admissions</a>
-          <a href="admissions.html" data-lang="fr" style="display:none">Admission</a>
-          <a href="partners.html" data-lang="en">Partners</a>
-          <a href="partners.html" data-lang="fr" style="display:none">Partenaires</a>
-          <a href="news.html" data-lang="en">News</a>
-          <a href="news.html" data-lang="fr" style="display:none">Actualités</a>
-          <a href="contact.html" data-lang="en">Contact</a>
-          <a href="contact.html" data-lang="fr" style="display:none">Contact</a>
-        </div>
+      <nav class="nav-new" id="nav" role="menu">
+        <a href="index.html" class="nav-link-new" data-lang="en">Home</a>
+        <a href="index.html" class="nav-link-new" data-lang="fr" style="display:none">Accueil</a>
+        <a href="about.html" class="nav-link-new" data-lang="en">About</a>
+        <a href="about.html" class="nav-link-new" data-lang="fr" style="display:none">À Propos</a>
+        <a href="admissions.html" class="nav-link-new" data-lang="en">Admissions</a>
+        <a href="admissions.html" class="nav-link-new" data-lang="fr" style="display:none">Admission</a>
+        <a href="partners.html" class="nav-link-new" data-lang="en">Partners</a>
+        <a href="partners.html" class="nav-link-new" data-lang="fr" style="display:none">Partenaires</a>
+        <a href="news.html" class="nav-link-new" data-lang="en">News</a>
+        <a href="news.html" class="nav-link-new" data-lang="fr" style="display:none">Actualités</a>
+        <a href="contact.html" class="nav-link-new" data-lang="en">Contact</a>
+        <a href="contact.html" class="nav-link-new" data-lang="fr" style="display:none">Contact</a>
       </nav>
+      <div class="header-controls-new">
+        <div class="lang-switcher-pill">
+          <button class="lang-btn-pill" data-lang-btn="en">EN</button>
+          <button class="lang-btn-pill" data-lang-btn="fr">FR</button>
+        </div>
+        <button id="nav-toggle" class="hamburger-new" aria-expanded="false" aria-controls="nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main id="main" class="container" tabindex="-1">
+  <main id="main" class="container reveal" tabindex="-1">
     <section class="main-content">
       <div>
-        <article class="section">
-          <h1 data-lang="en">INCUBIME Project</h1>
-          <h1 data-lang="fr" style="display:none">Projet INCUBIME</h1>
-          <p data-lang="en">INCUBIME is a program created by IME to support project promoters. Participants are
-            supported by a team of successful entrepreneurs and experienced businesspeople from the GICAM and ECAM
-            networks. They provide their expertise and advice to help bring projects to fruition. The official launch of
-            INCUBIME is planned for April 2021, with five (05) student projects already in pre-incubation.</p>
-          <p data-lang="fr" style="display:none">INCUBIME est un programme mis sur pieds par IME pour accompagner les
-            porteurs de projets. Ces derniers sont soutenus par une équipe constituée ; d'entrepreneurs à succès et
-            hommes d'affaires aguerris du réseau du GICAM et de l'ECAM. Ils mettent ainsi à la disposition des porteurs
-            de projets, leurs expertises et des conseils pour les aider à concrétiser leurs projets. Le lancement
-            officiel du programme INCUBIME est prévu pour Avril 2021, avec déjà cinq (05) projets d'étudiants en
-            pré-incubation.</p>
+        <article class="section reveal">
+          <h1 class="text-gradient" data-lang="en">Latest News & Projects</h1>
+          <h1 class="text-gradient" data-lang="fr" style="display:none">Actualités & Projets</h1>
+          <p class="lead" data-lang="en">Stay updated with the latest developments, innovations, and success stories at
+            IME School.</p>
+          <p class="lead" data-lang="fr" style="display:none">Restez informé des derniers développements, innovations et
+            réussites de l'école IME.</p>
         </article>
 
-        <article class="section" style="margin-top:1rem">
-          <h2 data-lang="en">International Certifications</h2>
-          <h2 data-lang="fr" style="display:none">Certifications Internationales</h2>
-          <p data-lang="en">Starting from Level 3, IME integrates international certification coaching into its training
-            program. This approach makes IME students more competitive in the job market. Depending on your curriculum
-            and in partnership with SECEL, IME offers more than 20 internationally recognized certifications in
-            management and engineering fields.</p>
-          <p data-lang="fr" style="display:none">Dès le niveau 3, IME intègre dans son programme de formation, des
-            séances de coaching à l'obtention de certifications internationales. Cette approche vise à rendre les
-            étudiants d'IME plus compétitifs sur le marché de l'emploi. En fonction de votre cursus de formation et en
-            partenariat avec le prestigieux centre de formation SECEL, IME vous offre plus de 20 certifications
-            reconnues à l'international, dans les domaines de management et d'ingénierie.</p>
-        </article>
+        <div class="cards-grid">
+          <article class="card-3d reveal">
+            <h2 data-lang="en">INCUBIME Project</h2>
+            <h2 data-lang="fr" style="display:none">Projet INCUBIME</h2>
+            <div class="news-tag" data-lang="en">Entrepreneurship</div>
+            <div class="news-tag" data-lang="fr" style="display:none">Entrepreneuriat</div>
+            <p data-lang="en">INCUBIME is a program created by IME to support project promoters. Participants are
+              supported by a team of successful entrepreneurs and experienced businesspeople.</p>
+            <p data-lang="fr" style="display:none">INCUBIME est un programme mis sur pieds par IME pour accompagner les
+              porteurs de projets. Ces derniers sont soutenus par une équipe constituée d'entrepreneurs à succès.</p>
+          </article>
+
+          <article class="card-3d reveal" style="transition-delay: 0.2s;">
+            <h2 data-lang="en">International Certifications</h2>
+            <h2 data-lang="fr" style="display:none">Certifications Internationales</h2>
+            <div class="news-tag" data-lang="en">Academics</div>
+            <div class="news-tag" data-lang="fr" style="display:none">Académique</div>
+            <p data-lang="en">IME integrates international certification coaching into its training program, offering
+              more than 20 internationally recognized certifications.</p>
+            <p data-lang="fr" style="display:none">IME intègre dans son programme de formation des séances de coaching à
+              l'obtention de certifications internationales.</p>
+          </article>
+        </div>
       </div>
 
       <aside class="sidebar">
-        <div class="section">
+        <div class="section reveal">
           <h3 data-lang="en">Quick Links</h3>
           <h3 data-lang="fr" style="display:none">Liens Rapides</h3>
           <div class="quick-links">
-            <a href="index.html" data-lang="en">Back to Home</a>
-            <a href="index.html" data-lang="fr" style="display:none">Retour à l'Accueil</a>
-            <a href="partners.html" data-lang="en">Partners</a>
-            <a href="partners.html" data-lang="fr" style="display:none">Partenaires</a>
+            <a href="index.html" class="nav-link-new" data-lang="en">Back to Home</a>
+            <a href="index.html" class="nav-link-new" data-lang="fr" style="display:none">Retour à l'Accueil</a>
+            <a href="partners.html" class="nav-link-new" data-lang="en">Partners</a>
+            <a href="partners.html" class="nav-link-new" data-lang="fr" style="display:none">Partenaires</a>
           </div>
         </div>
       </aside>
@@ -133,6 +140,7 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/redesign.js"></script>
 </body>
 
 </html>

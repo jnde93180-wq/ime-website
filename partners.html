@@ -10,6 +10,7 @@
   <meta name="theme-color" content="#0b57a4">
   <link rel="icon" href="assets/images/logo-ime-p.png" type="image/png">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/redesign.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -23,10 +24,10 @@
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="header">
-    <div class="container top">
+  <header class="header-new">
+    <div class="container">
       <div class="brand">
-        <a href="index.html" aria-label="IME Home">
+        <a href="index.html" aria-label="IME Home" class="logo-link">
           <picture>
             <source type="image/avif" srcset="assets/images/logo-ime-p.avif">
             <source type="image/webp" srcset="assets/images/logo-ime-p.webp">
@@ -42,168 +43,141 @@
           <div class="brand-slogan" data-lang="fr" style="display:none">Passion pour l'Excellence</div>
         </div>
       </div>
-      <nav aria-label="Main navigation">
-        <div class="header-controls">
-          <div class="lang-switcher">
-            <button class="lang-btn" data-lang-btn="en">EN</button>
-            <button class="lang-btn lang-btn--active" data-lang-btn="fr">FR</button>
-          </div>
-          <button id="nav-toggle" class="hamburger" aria-expanded="false" aria-controls="nav">☰</button>
-        </div>
-        <div id="nav" class="nav" role="menu">
-          <a href="index.html" data-lang="en">Home</a>
-          <a href="index.html" data-lang="fr" style="display:none">Accueil</a>
-          <a href="about.html" data-lang="en">About</a>
-          <a href="about.html" data-lang="fr" style="display:none">À Propos</a>
-          <a href="admissions.html" data-lang="en">Admissions</a>
-          <a href="admissions.html" data-lang="fr" style="display:none">Admission</a>
-          <a href="partners.html" data-lang="en">Partners</a>
-          <a href="partners.html" data-lang="fr" style="display:none">Partenaires</a>
-          <a href="news.html" data-lang="en">News</a>
-          <a href="news.html" data-lang="fr" style="display:none">Actualités</a>
-          <a href="contact.html" data-lang="en">Contact</a>
-          <a href="contact.html" data-lang="fr" style="display:none">Contact</a>
-        </div>
+      <nav class="nav-new" id="nav" role="menu">
+        <a href="index.html" class="nav-link-new" data-lang="en">Home</a>
+        <a href="index.html" class="nav-link-new" data-lang="fr" style="display:none">Accueil</a>
+        <a href="about.html" class="nav-link-new" data-lang="en">About</a>
+        <a href="about.html" class="nav-link-new" data-lang="fr" style="display:none">À Propos</a>
+        <a href="admissions.html" class="nav-link-new" data-lang="en">Admissions</a>
+        <a href="admissions.html" class="nav-link-new" data-lang="fr" style="display:none">Admission</a>
+        <a href="partners.html" class="nav-link-new" data-lang="en">Partners</a>
+        <a href="partners.html" class="nav-link-new" data-lang="fr" style="display:none">Partenaires</a>
+        <a href="news.html" class="nav-link-new" data-lang="en">News</a>
+        <a href="news.html" class="nav-link-new" data-lang="fr" style="display:none">Actualités</a>
+        <a href="contact.html" class="nav-link-new" data-lang="en">Contact</a>
+        <a href="contact.html" class="nav-link-new" data-lang="fr" style="display:none">Contact</a>
       </nav>
+      <div class="header-controls-new">
+        <div class="lang-switcher-pill">
+          <button class="lang-btn-pill" data-lang-btn="en">EN</button>
+          <button class="lang-btn-pill" data-lang-btn="fr">FR</button>
+        </div>
+        <button id="nav-toggle" class="hamburger-new" aria-expanded="false" aria-controls="nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main id="main" class="container" tabindex="-1">
+  <main id="main" class="container reveal" tabindex="-1">
     <section class="main-content">
       <div>
-        <article class="section">
-          <h1 data-lang="en">Our Partners</h1>
-          <h1 data-lang="fr" style="display:none">Nos Partenaires</h1>
-          <p data-lang="en">IME collaborates with leading international institutions in management and engineering. Our
-            network of partners strengthens our educational offering and creates opportunities for our students.</p>
-          <p data-lang="fr" style="display:none">IME collabore avec les principales institutions internationales en
-            management et ingénierie. Notre réseau de partenaires renforce notre offre éducative et crée des
+        <article class="section reveal">
+          <h1 class="text-gradient" data-lang="en">Our Partners</h1>
+          <h1 class="text-gradient" data-lang="fr" style="display:none">Nos Partenaires</h1>
+          <p class="lead" data-lang="en">IME collaborates with leading international institutions in management and
+            engineering.</p>
+          <p class="lead" data-lang="fr" style="display:none">IME collabore avec les principales institutions
+            internationales en management et ingénierie.</p>
+          <p data-lang="en">Our network of partners strengthens our educational offering and creates opportunities for
+            our students.</p>
+          <p data-lang="fr" style="display:none">Notre réseau de partenaires renforce notre offre éducative et crée des
             opportunités pour nos étudiants.</p>
         </article>
 
-        <article class="section" style="margin-top:1rem">
+        <article class="section reveal" style="margin-top:2rem">
           <h2 data-lang="en">Academic & Professional Partners</h2>
           <h2 data-lang="fr" style="display:none">Partenaires Académiques & Professionnels</h2>
-          <div class="partners-grid">
-            <div class="partner-item" tabindex="0">
+          <div class="partners-grid-new">
+            <div class="partner-card card-3d reveal">
               <picture>
                 <source type="image/avif" srcset="assets/images/partners/Efrei.avif">
                 <source type="image/webp" srcset="assets/images/partners/Efrei.webp">
                 <img src="assets/images/partners/Efrei.png" alt="EFREI">
               </picture>
-              <p>EFREI Paris — France</p>
+              <div class="partner-info">
+                <strong>EFREI Paris</strong>
+                <span>France</span>
+              </div>
             </div>
-            <div class="partner-item" tabindex="0">
+            <div class="partner-card card-3d reveal">
               <picture>
                 <source type="image/avif" srcset="assets/images/partners/Esigetel.avif">
                 <source type="image/webp" srcset="assets/images/partners/Esigetel.webp">
                 <img src="assets/images/partners/Esigetel.png" alt="Esigetel">
               </picture>
-              <p>Esigetel — France</p>
+              <div class="partner-info">
+                <strong>Esigetel</strong>
+                <span>France</span>
+              </div>
             </div>
-            <div class="partner-item" tabindex="0">
+            <div class="partner-card card-3d reveal">
               <picture>
                 <source type="image/avif" srcset="assets/images/partners/Logo-GICAM-blanc.avif">
                 <source type="image/webp" srcset="assets/images/partners/Logo-GICAM-blanc.webp">
                 <img src="assets/images/partners/Logo-GICAM-blanc.png" alt="GICAM">
               </picture>
-              <p>GICAM — Cameroon</p>
+              <div class="partner-info">
+                <strong>GICAM</strong>
+                <span>Cameroon</span>
+              </div>
             </div>
-            <div class="partner-item" tabindex="0">
+            <div class="partner-card card-3d reveal">
               <picture>
                 <source type="image/avif" srcset="assets/images/partners/logo-polytechnique-blanc.avif">
                 <source type="image/webp" srcset="assets/images/partners/logo-polytechnique-blanc.webp">
                 <img src="assets/images/partners/logo-polytechnique-blanc.png" alt="Polytechnique">
               </picture>
-              <p>Polytechnique — France</p>
+              <div class="partner-info">
+                <strong>Polytechnique</strong>
+                <span>France</span>
+              </div>
             </div>
-            <div class="partner-item" tabindex="0">
+            <div class="partner-card card-3d reveal">
               <picture>
                 <source type="image/avif" srcset="assets/images/partners/logo-iae-metz-blanc.avif">
                 <source type="image/webp" srcset="assets/images/partners/logo-iae-metz-blanc.webp">
                 <img src="assets/images/partners/logo-iae-metz-blanc.png" alt="IAE Metz">
               </picture>
-              <p>IAE Metz — France</p>
+              <div class="partner-info">
+                <strong>IAE Metz</strong>
+                <span>France</span>
+              </div>
             </div>
-            <div class="partner-item" tabindex="0">
-              <picture>
-                <source type="image/avif" srcset="assets/images/partners/Logo-Secel-blanc.avif">
-                <source type="image/webp" srcset="assets/images/partners/Logo-Secel-blanc.webp">
-                <img src="assets/images/partners/Logo-Secel-blanc.png" alt="SECEL">
-              </picture>
-              <p>SECEL — France</p>
-            </div>
-            <div class="partner-item" tabindex="0">
-              <picture>
-                <source type="image/avif" srcset="assets/images/partners/Univ-de-haute-alsace.avif">
-                <source type="image/webp" srcset="assets/images/partners/Univ-de-haute-alsace.webp">
-                <img src="assets/images/partners/Univ-de-haute-alsace.png" alt="UHA">
-              </picture>
-              <p>University of Haute-Alsace — France</p>
-            </div>
-            <div class="partner-item" tabindex="0">
+            <div class="partner-card card-3d reveal">
               <picture>
                 <source type="image/avif" srcset="assets/images/partners/ESG-UQAM.avif">
                 <source type="image/webp" srcset="assets/images/partners/ESG-UQAM.webp">
                 <img src="assets/images/partners/ESG-UQAM.png" alt="ESG UQAM">
               </picture>
-              <p>ESG UQAM — Canada</p>
+              <div class="partner-info">
+                <strong>ESG UQAM</strong>
+                <span>Canada</span>
+              </div>
             </div>
-            <div class="partner-item" tabindex="0">
+            <div class="partner-card card-3d reveal">
               <picture>
                 <source type="image/avif" srcset="assets/images/partners/UWE-01.avif">
                 <source type="image/webp" srcset="assets/images/partners/UWE-01.webp">
                 <img src="assets/images/partners/UWE-01.png" alt="UWE">
               </picture>
-              <p>UWE Bristol — UK</p>
+              <div class="partner-info">
+                <strong>UWE Bristol</strong>
+                <span>UK</span>
+              </div>
             </div>
-            <div class="partner-item" tabindex="0">
-              <picture>
-                <source type="image/avif" srcset="assets/images/partners/Logo-blanc-Transimex-1.avif">
-                <source type="image/webp" srcset="assets/images/partners/Logo-blanc-Transimex-1.webp">
-                <img src="assets/images/partners/Logo-Transimex-1.png" alt="Transimex">
-              </picture>
-              <p>Transimex — Cameroon</p>
-            </div>
-            <div class="partner-item" tabindex="0">
-              <picture>
-                <source type="image/avif" srcset="assets/images/partners/A-State_Stack_1C_White_Dark.avif">
-                <source type="image/webp" srcset="assets/images/partners/A-State_Stack_1C_White_Dark.webp">
-                <img src="assets/images/partners/A-State_Stack_1C_White_Dark.png" alt="Arkansas State">
-              </picture>
-              <p>Arkansas State University — USA</p>
-            </div>
-            <div class="partner-item" tabindex="0">
+            <div class="partner-card card-3d reveal">
               <picture>
                 <source type="image/avif" srcset="assets/images/partners/business-science-institute-.avif">
                 <source type="image/webp" srcset="assets/images/partners/business-science-institute-.webp">
                 <img src="assets/images/partners/business-science-institute-.png" alt="BSI">
               </picture>
-              <p>Business Science Institute — Germany</p>
-            </div>
-            <div class="partner-item" tabindex="0">
-              <picture>
-                <source type="image/avif" srcset="assets/images/partners/Logo-Premium-blanc.avif">
-                <source type="image/webp" srcset="assets/images/partners/Logo-Premium-blanc.webp">
-                <img src="assets/images/partners/Logo-Premium-blanc.png" alt="Premium">
-              </picture>
-              <p>Premium Partners Network</p>
-            </div>
-            <div class="partner-item" tabindex="0">
-              <picture>
-                <source type="image/avif" srcset="assets/images/partners/Logo-MGIEVE-blanc.avif">
-                <source type="image/webp" srcset="assets/images/partners/Logo-MGIEVE-blanc.webp">
-                <img src="assets/images/partners/Logo-MGIEVE-blanc.png" alt="MGIEVE">
-              </picture>
-              <p>MGIEVE — France</p>
-            </div>
-            <div class="partner-item" tabindex="0">
-              <picture>
-                <source type="image/avif" srcset="assets/images/partners/Sans-titre-2-1.avif">
-                <source type="image/webp" srcset="assets/images/partners/Sans-titre-2-1.webp">
-                <img src="assets/images/partners/Sans-titre-2-1.png" alt="Partner">
-              </picture>
-              <p>Strategic Partner Network</p>
+              <div class="partner-info">
+                <strong>BSI</strong>
+                <span>Germany</span>
+              </div>
             </div>
           </div>
         </article>
@@ -244,16 +218,16 @@
       </div>
 
       <aside class="sidebar">
-        <div class="section">
+        <div class="section reveal">
           <h3 data-lang="en">Quick Links</h3>
           <h3 data-lang="fr" style="display:none">Liens Rapides</h3>
           <div class="quick-links">
-            <a href="index.html" data-lang="en">Back to Home</a>
-            <a href="index.html" data-lang="fr" style="display:none">Retour à l'Accueil</a>
-            <a href="admissions.html" data-lang="en">Apply for Admissions</a>
-            <a href="admissions.html" data-lang="fr" style="display:none">Demander l'Admission</a>
-            <a href="contact.html" data-lang="en">Contact Us</a>
-            <a href="contact.html" data-lang="fr" style="display:none">Nous Contacter</a>
+            <a href="index.html" class="nav-link-new" data-lang="en">Back to Home</a>
+            <a href="index.html" class="nav-link-new" data-lang="fr" style="display:none">Retour à l'Accueil</a>
+            <a href="admissions.html" class="nav-link-new" data-lang="en">Apply for Admissions</a>
+            <a href="admissions.html" class="nav-link-new" data-lang="fr" style="display:none">Demander l'Admission</a>
+            <a href="contact.html" class="nav-link-new" data-lang="en">Contact Us</a>
+            <a href="contact.html" class="nav-link-new" data-lang="fr" style="display:none">Nous Contacter</a>
           </div>
         </div>
 
@@ -292,6 +266,7 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/redesign.js"></script>
 </body>
 
 </html>
