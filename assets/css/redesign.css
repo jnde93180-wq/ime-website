@@ -64,6 +64,17 @@ h6 {
     background: rgba(255, 255, 255, 1);
 }
 
+.header-new .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--container-max);
+    padding: 0 1.5rem;
+    /* Reduced padding for mobile space */
+    width: 100%;
+    margin: 0 auto;
+}
+
 /* Home Page Specific (Blue Background) */
 .header-new.home-page:not(.scrolled) {
     background: rgba(15, 76, 129, 0.98);
@@ -141,10 +152,10 @@ h6 {
 .lang-switcher-pill {
     display: flex;
     background: rgba(15, 76, 129, 0.05);
-    padding: 3px;
+    padding: 2px;
     border-radius: 999px;
     border: 1px solid rgba(15, 76, 129, 0.1);
-    gap: 2px;
+    gap: 1px;
 }
 
 .header-new.home-page:not(.scrolled) .lang-switcher-pill {
@@ -153,14 +164,14 @@ h6 {
 }
 
 .lang-btn-pill {
-    padding: 2px 8px;
-    /* Much smaller */
+    padding: 1px 5px;
+    /* Tiny padding */
     border-radius: 999px;
     border: none;
     background: transparent;
     color: var(--primary-blue);
-    font-size: 0.7rem;
-    /* Smaller font */
+    font-size: 0.6rem;
+    /* Micro font */
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -726,13 +737,12 @@ p {
 
 .hamburger-new span {
     display: block;
-    width: 26px;
-    /* Slightly wider */
+    width: 32px;
+    /* Standard width for visibility */
     height: 3px;
-    /* Thicker for visibility */
     background: var(--primary-blue);
     transition: 0.3s;
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 .header-new.scrolled .hamburger-new span,
@@ -741,9 +751,21 @@ p {
 }
 
 @media (max-width: 968px) {
+
+    /* Mobile Controls Wrapper to prevent stacking */
+    .mobile-controls {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        /* Space between lang and hamburger */
+    }
+
     .hamburger-new {
         display: flex;
         /* Visible only on mobile/tablet */
+        margin-left: 0;
+        padding: 5px;
+        /* Reduce padding to save space */
     }
 
     .nav-new {
