@@ -165,13 +165,13 @@ h6 {
 }
 
 .lang-btn-pill {
-    padding: 0 2px;
-    /* Micro padding */
+    padding: 0 1px;
+    /* Minimal padding */
     border-radius: 999px;
     border: none;
     background: transparent;
     color: var(--primary-blue);
-    font-size: 0.45rem;
+    font-size: 0.4rem;
     /* Ultra-micro font */
     line-height: 1;
     font-weight: 700;
@@ -764,7 +764,13 @@ p {
     .mobile-controls {
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 8px;
+        /* Reduced gap */
+    }
+
+    /* Shift controls to right by reducing right padding */
+    .header-new .container {
+        padding-right: 0.5rem;
     }
 
     .hamburger-new {
