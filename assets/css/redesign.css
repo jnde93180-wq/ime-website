@@ -165,15 +165,15 @@ h6 {
 }
 
 .lang-btn-pill {
-    padding: 0 4px;
-    /* Minimal padding */
+    padding: 0 2px;
+    /* Micro padding */
     border-radius: 999px;
     border: none;
     background: transparent;
     color: var(--primary-blue);
-    font-size: 0.55rem;
-    /* Micro font */
-    line-height: 1.2;
+    font-size: 0.45rem;
+    /* Ultra-micro font */
+    line-height: 1;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -729,23 +729,25 @@ p {
     display: none;
     /* Hidden by default on desktop */
     flex-direction: column;
-    gap: 6px;
-    /* Increased gap to uncompress stripes */
+    gap: 4px;
+    /* Reduced gap */
     cursor: pointer;
     background: transparent;
     border: none;
     z-index: 2001;
-    padding: 10px;
-    height: 40px;
-    /* Force sufficient height */
+    padding: 5px;
+    /* Reduced padding */
+    height: 30px;
+    /* Reduced height */
     justify-content: center;
 }
 
 .hamburger-new span {
     display: block;
-    width: 32px;
-    /* Standard width for visibility */
-    height: 3px;
+    width: 20px;
+    /* Reduced width */
+    height: 2px;
+    /* Thinner */
     background: var(--primary-blue);
     transition: 0.3s;
     border-radius: 3px;
@@ -813,12 +815,25 @@ p {
 
     /* Hide long subtitle on mobile to prevent overflow */
     .brand-subtitle {
+        display: block;
+        font-size: 0.65rem;
+        line-height: 1.1;
+        white-space: normal;
+        max-width: 200px;
+        /* Constrain width */
+        color: var(--white);
+    }
+
+    .brand-name,
+    .brand-slogan {
         display: none !important;
     }
 
     /* Adjust brand text for mobile */
     .brand-text {
         margin-left: 0.5rem;
+        display: flex;
+        align-items: center;
     }
 }
 
