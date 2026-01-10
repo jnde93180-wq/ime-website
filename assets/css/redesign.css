@@ -800,6 +800,26 @@ p {
     .nav-new.active {
         right: 0;
     }
+
+    /* Force mobile nav links to be white on ALL pages */
+    .nav-link-new,
+    .header-new.scrolled .nav-link-new,
+    .header-new.internal .nav-link-new {
+        color: var(--white) !important;
+        margin-left: 0;
+        font-size: 1.25rem;
+        /* Larger touch targets */
+    }
+
+    /* Hide long subtitle on mobile to prevent overflow */
+    .brand-subtitle {
+        display: none !important;
+    }
+
+    /* Adjust brand text for mobile */
+    .brand-text {
+        margin-left: 0.5rem;
+    }
 }
 
 .partner-card img.invert,
